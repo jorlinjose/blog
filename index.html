@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shatterOcalm | JO</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #2c3e50;
+            --accent-color: #2c3e50;
+            --highlight-color: #c0392b;
+            --serif-font: 'Merriweather', serif;
+            --body-font: 'Inter', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--bg-color); color: var(--text-color); font-family: var(--body-font); line-height: 1.8; }
+        
+        /* Layout */
+        .container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { padding: 40px 0 60px; text-align: center; border-bottom: 1px solid #e0e0e0; margin-bottom: 40px; }
+        .site-title { font-family: var(--serif-font); font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; color: var(--accent-color); }
+        .site-subtitle { color: #666; font-style: italic; font-family: var(--serif-font); }
+        .nav-back { display: inline-block; margin-top: 20px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-back a { text-decoration: none; color: #888; transition: 0.3s; }
+        .nav-back a:hover { color: var(--highlight-color); }
+
+        /* Post List */
+        .post-entry { margin-bottom: 50px; }
+        .post-date { font-size: 0.85rem; color: #888; display: block; margin-bottom: 5px; font-family: var(--body-font); }
+        .post-title { font-family: var(--serif-font); font-size: 1.5rem; margin-bottom: 10px; }
+        .post-title a { text-decoration: none; color: var(--accent-color); transition: 0.3s; }
+        .post-title a:hover { color: var(--highlight-color); }
+        .post-excerpt { color: #555; font-family: var(--serif-font); font-weight: 300; }
+        
+        /* Footer */
+        footer { text-align: center; padding: 50px 0; color: #999; font-size: 0.8rem; border-top: 1px solid #e0e0e0; margin-top: 50px; }
+        
+        @media (max-width: 600px) {
+            .site-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="nav-back"><a href="https://jorlin.in"><i class="fas fa-arrow-left"></i> Main Site</a></div>
+            <h1 class="site-title">shatterOcalm</h1>
+            <p class="site-subtitle">Reflections & Poetry by Jorlin Jose</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="post-entry">
+            <span class="post-date">October 13, 2023</span>
+            <h2 class="post-title"><a href="posts/untimely-winter.html">Untimely Winter</a></h2>
+            <p class="post-excerpt">Ominous shroud descends as snow and dust embrace the wind howls, making the trees naked, bare branches clawing at the air...</p>
+        </div>
+
+        <div class="post-entry">
+            <span class="post-date">September 30, 2023</span>
+            <h2 class="post-title"><a href="#">A Haunting Melody</a></h2>
+            <p class="post-excerpt">Adorned by waning lunar sight droplets dance, weaving light stirring ceaseless eerie charm...</p>
+        </div>
+
+        <div class="post-entry">
+            <span class="post-date">September 18, 2023</span>
+            <h2 class="post-title"><a href="#">Whispers in Refrain</a></h2>
+            <p class="post-excerpt">Whispers linger as sparks ignite allure takes flight in a hushed night. Flames kindled as uncertainty lies...</p>
+        </div>
+
+        <div class="post-entry">
+            <span class="post-date">July 25, 2022</span>
+            <h2 class="post-title"><a href="#">Spectre</a></h2>
+            <p class="post-excerpt">When I feel breath as labour quenching the angst in drops spectre creeps in as always...</p>
+        </div>
+
+        <div class="post-entry">
+            <span class="post-date">October 08, 2021</span>
+            <h2 class="post-title"><a href="#">Smiling Radcliffe</a></h2>
+            <p class="post-excerpt">Sucking the last drop of nectar negating its taste, colour or smell with a slap and kick...</p>
+        </div>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Jorlin Jose <br> <a href="https://jorlin.in">jorlin.in</a></p>
+    </footer>
+
+</body>
+</html>
+
