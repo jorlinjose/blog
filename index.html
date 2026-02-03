@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
-
-    <title>shatterOcalm | JO</title>
+    <title>shatterOcalm</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +12,8 @@
 
     <style>
         :root {
-            --bg-color: #f8f9fa;
+            --bg-color: #f4f6f8; /* Slightly darker grey to make cards pop */
+            --card-bg: #ffffff;
             --text-color: #2c3e50;
             --accent-color: #2c3e50;
             --highlight-color: #c0392b;
@@ -25,33 +22,100 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: var(--bg-color); color: var(--text-color); font-family: var(--body-font); line-height: 1.8; }
+        body { background: var(--bg-color); color: var(--text-color); font-family: var(--body-font); line-height: 1.6; }
         .container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
         
-        header { padding: 40px 0 40px; text-align: center; border-bottom: 1px solid #e0e0e0; margin-bottom: 40px; }
-        .site-title { font-family: var(--serif-font); font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; color: var(--accent-color); }
-        .site-subtitle { color: #666; font-style: italic; font-family: var(--serif-font); }
-        .nav-back { display: inline-block; margin-top: 20px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
-        .nav-back a { text-decoration: none; color: #888; transition: 0.3s; }
-        .nav-back a:hover { color: var(--highlight-color); }
+        /* HEADER (More Compact) */
+        header { 
+            padding: 30px 0 20px; /* Reduced vertical padding */
+            text-align: center; 
+            margin-bottom: 20px; 
+        }
+        .site-title { 
+            font-family: var(--serif-font); 
+            font-size: 2.2rem; /* Slightly smaller */
+            font-weight: 700; 
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+        .site-subtitle { color: #666; font-style: italic; font-family: var(--serif-font); font-size: 0.95rem; }
+        
+        .nav-back { 
+            display: inline-block; 
+            margin-bottom: 15px; /* Moved above title */
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            opacity: 0.7;
+        }
+        .nav-back a { text-decoration: none; color: inherit; transition: 0.3s; }
+        .nav-back a:hover { color: var(--highlight-color); opacity: 1; }
 
-        .post-entry { margin-bottom: 50px; }
-        .post-date { font-size: 0.85rem; color: #888; display: block; margin-bottom: 5px; font-family: var(--body-font); }
-        .post-title { font-family: var(--serif-font); font-size: 1.5rem; margin-bottom: 10px; }
-        .post-title a { text-decoration: none; color: var(--accent-color); transition: 0.3s; }
-        .post-title a:hover { color: var(--highlight-color); }
-        .post-excerpt { color: #555; font-family: var(--serif-font); font-weight: 300; }
+        /* POST CARDS (New Look) */
+        .post-entry { 
+            background: var(--card-bg);
+            padding: 25px 30px;
+            margin-bottom: 25px; 
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid #eaeaea;
+        }
         
-        footer { text-align: center; padding: 40px 0; font-size: 0.8rem; color: #777; }
+        /* Hover Effect for Cards */
+        .post-entry:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-color: #ddd;
+        }
+
+        .post-date { 
+            font-size: 0.8rem; 
+            color: #999; 
+            display: block; 
+            margin-bottom: 8px; 
+            font-family: var(--body-font);
+            font-weight: 500;
+        }
+        .post-title { 
+            font-family: var(--serif-font); 
+            font-size: 1.4rem; 
+            margin-bottom: 8px; 
+        }
+        .post-title a { text-decoration: none; color: var(--accent-color); }
+        /* When hovering card, title changes color */
+        .post-entry:hover .post-title a { color: var(--highlight-color); }
         
-        @media (max-width: 600px) { .site-title { font-size: 2rem; } }
+        .post-excerpt { color: #555; font-family: var(--serif-font); font-weight: 300; font-size: 0.95rem; line-height: 1.6; }
+        
+        /* FOOTER (Compact & Color Corrected) */
+        footer { 
+            text-align: center; 
+            padding: 30px 0; /* Reduced padding */
+            color: #999; 
+            font-size: 0.8rem; 
+            margin-top: 30px; 
+        }
+        /* Make the link look exactly like the text */
+        footer a { 
+            color: inherit; /* Inherits the #999 grey */
+            text-decoration: none; 
+            border-bottom: 1px dotted #ccc; /* Subtle underline */
+            transition: 0.3s;
+        }
+        footer a:hover { color: var(--highlight-color); border-bottom-color: var(--highlight-color); }
+        
+        @media (max-width: 600px) { 
+            .site-title { font-size: 1.8rem; } 
+            .post-entry { padding: 20px; }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="container">
-            <div class="nav-back"><a href="https://jorlin.in"><i class="fas fa-arrow-left"></i> Home</a></div>
+            <div class="nav-back"><a href="https://jorlin.in"><i class="fas fa-arrow-left"></i> Home </a></div>
             <h1 class="site-title">shatterOcalm</h1>
         </div>
     </header>
@@ -91,7 +155,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 <a href="https://jorlin.in" target="_blank">Jorlin</p>
+        <p>&copy; 2026 Jorlin<br> <a href="https://jorlin.in">jorlin.in</a></p>
     </footer>
 
 </body>
