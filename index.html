@@ -13,14 +13,14 @@
     <style>
         /* --- CSS VARIABLES (Colorful Literary Theme) --- */
         :root {
-            --bg-color: #f7f5f0; /* Warmer, softer parchment background */
-            --surface-color: #ffffff; /* Crisp white for cards */
-            --heading-color: #1a365d; /* Deep Navy for Main Headings */
-            --subheading-color: #2d3748; /* Dark slate for article titles */
-            --text-main: #4a5568; /* Softer dark grey for body text */
+            --bg-color: #f7f5f0; 
+            --surface-color: #ffffff; 
+            --heading-color: #1a365d; 
+            --subheading-color: #2d3748; 
+            --text-main: #4a5568; 
             --text-muted: #718096;
-            --accent-color: #9b2c2c; /* Rich Crimson */
-            --accent-light: #fff5f5; /* Light crimson for tag backgrounds */
+            --accent-color: #9b2c2c; 
+            --accent-light: #fff5f5; 
             --border-color: #e2e8f0;
             --spotify-green: #1DB954;
             
@@ -47,19 +47,17 @@
 
         /* --- HEADER & NAVIGATION --- */
         .site-header {
-            padding: 60px 0 40px;
+            padding: 25px 0 20px; /* Reduced top/bottom padding significantly */
             text-align: center;
             border-bottom: 2px dashed var(--border-color);
-            margin-bottom: 50px;
+            margin-bottom: 30px; /* Reduced spacing below header */
         }
         
         .main-site-link {
             display: inline-block;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+            font-size: 0.9rem;
             color: var(--accent-color);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 600;
             background: var(--accent-light);
             padding: 5px 15px;
@@ -73,7 +71,7 @@
             font-size: 3.5rem;
             font-weight: 700;
             letter-spacing: -0.5px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             color: var(--heading-color) !important;
         }
         
@@ -83,15 +81,14 @@
             justify-content: center;
             gap: 25px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 15px;
         }
         
         .category-nav a {
             font-family: var(--font-sans) !important;
-            font-size: 0.9rem;
+            font-size: 1rem; /* Slightly larger since it's no longer all-caps */
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             color: var(--text-muted);
             padding-bottom: 4px;
             border-bottom: 2px solid transparent;
@@ -104,7 +101,7 @@
 
         /* --- CATEGORY SECTIONS --- */
         .category-section {
-            margin-bottom: 70px;
+            margin-bottom: 60px;
             padding-top: 20px;
         }
 
@@ -115,7 +112,7 @@
             border-bottom: 3px solid var(--accent-color);
             padding-bottom: 8px;
             margin-bottom: 30px;
-            display: inline-block; /* Makes border only as wide as text */
+            display: inline-block;
         }
 
         .empty-state {
@@ -228,6 +225,7 @@
             .article-title { font-size: 1.6rem; }
             .section-header { font-size: 1.8rem; }
             .article-card { padding: 25px; }
+            .site-header { padding: 20px 0 15px; }
         }
     </style>
 </head>
@@ -235,7 +233,7 @@
 
     <header class="site-header">
         <div class="container">
-            <a href="https://jorlin.in" class="main-site-link"><i class="fas fa-arrow-left" style="margin-right: 5px;"></i> jorlin.in</a>
+            <a href="https://jorlin.in" class="main-site-link"><i class="fas fa-arrow-left" style="margin-right: 5px;"></i> Home</a>
             <h1 class="site-title">shatterOcalm</h1>
                         
             <nav class="category-nav">
@@ -316,27 +314,27 @@
             <div class="playlist-grid">
                 <a href="https://open.spotify.com/playlist/6Uxbjp9iag9SwZeGgRMF6O?si=nEcNi899SiqDHU-7Sia0JA&pi=dhKbeL4eTNK3J" target="_blank" class="playlist-card">
                     <i class="fab fa-spotify"></i>
-                    <span>Playlist Lag Ja Gale</span>
+                    <span>Lag Ja Gale</span>
                 </a>
                 <a href="https://open.spotify.com/playlist/37i9dQZF1EQn4jwNIohw50?si=utovy78SRwWMxLJChfrjDA" target="_blank" class="playlist-card">
                     <i class="fab fa-spotify"></i>
-                    <span>Playlist 2000s Mix</span>
+                    <span>2000s Mix</span>
                 </a>
                 <a href="https://open.spotify.com/playlist/0ziglu9hYHm9y7Nknh3e4c?si=7k593pK0Raa5vmqV_66tGA" target="_blank" class="playlist-card">
                     <i class="fab fa-spotify"></i>
-                    <span>Playlist Tharattu</span>
+                    <span>Tharattu</span>
                 </a>
                 <a href="https://open.spotify.com/playlist/25fCBrTDFKvnxTlafW2TOk?si=Phbfbu6KSJGj3rI_TrEE3Q" target="_blank" class="playlist-card">
                     <i class="fab fa-spotify"></i>
-                    <span>Playlist Evergreen Malayalam</span>
+                    <span>Evergreen Malayalam</span>
                 </a>
                 <a href="https://open.spotify.com/playlist/39iCP5PvxaVE1N5W33HOEc?si=ZCdTbsYDSB69vK--eW_8ag" target="_blank" class="playlist-card">
                     <i class="fab fa-spotify"></i>
-                    <span>Playlist tamilazhagu</span>
+                    <span>tamilazhagu</span>
                 </a>
                 <a href="https://open.spotify.com/playlist/0DdlGYcQl0i5NSzU5T6vuN?si=9yYC3ItxS4yTM58hc27K0w" target="_blank" class="playlist-card">
                     <i class="fab fa-spotify"></i>
-                    <span>Playlist mystery</span>
+                    <span>mystery</span>
                 </a>
             </div>
 
