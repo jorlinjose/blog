@@ -7,192 +7,344 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --bg-color: #f8f9fa; --text-color: #2c3e50; --serif-font: 'Merriweather', serif; --body-font: 'Inter', sans-serif; }
+        :root { 
+            --bg-color: #f4f6f8; 
+            --card-bg: #ffffff;
+            --text-color: #2c3e50; 
+            --accent-color: #2c3e50;
+            --highlight-color: #c0392b;
+            --serif-font: 'Merriweather', serif; 
+            --body-font: 'Inter', sans-serif; 
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background: var(--bg-color); color: var(--text-color); font-family: var(--serif-font); line-height: 1.9; }
-        .container { max-width: 750px; margin: 0 auto; padding: 60px 20px; }
-        .back-link { font-family: var(--body-font); font-size: 0.9rem; text-decoration: none; color: #888; display: block; margin-bottom: 40px; }
-        .back-link:hover { color: #c0392b; }
-        h1 { font-size: 2.5rem; color: #2c3e50; margin-bottom: 10px; text-align: center; }
-        .date { font-family: var(--body-font); color: #888; font-size: 0.9rem; margin-bottom: 40px; display: block; border-bottom: 1px solid #ddd; padding-bottom: 20px; text-align: center; }
         
-        .content { font-size: 1.15rem; color: #333; text-align: justify; }
-        .content p { margin-bottom: 25px; }
-        .chapter-title { font-family: var(--body-font); font-size: 1.3rem; font-weight: 600; text-align: center; margin: 50px 0 25px; text-transform: uppercase; letter-spacing: 2px; color: #c0392b; }
+        .container { 
+            max-width: 750px; 
+            margin: 40px auto; 
+            padding: 50px; 
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border: 1px solid #eaeaea;
+        }
         
-        .data-log { background: #eef2f3; padding: 20px; border-left: 4px solid #2c3e50; font-family: 'Fira Code', monospace; font-size: 0.95rem; margin-bottom: 25px; white-space: pre-wrap; }
+        .back-link { font-family: var(--body-font); font-size: 0.85rem; text-decoration: none; color: #888; display: inline-block; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;}
+        .back-link:hover { color: var(--highlight-color); }
         
-        /* Image Placeholder Style */
-        .story-image { text-align: center; margin: 40px 0; font-style: italic; color: #888; font-family: var(--body-font); background: #eaeaea; padding: 30px; border-radius: 8px; }
+        h1 { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 10px; text-align: center; line-height: 1.3; }
+        .date { font-family: var(--body-font); color: #888; font-size: 0.9rem; margin-bottom: 50px; display: block; border-bottom: 1px solid #eaeaea; padding-bottom: 25px; text-align: center; }
+        
+        .content { font-size: 1.15rem; color: #333; text-align: left; }
+        .content p { margin-bottom: 25px; text-align: justify; }
+        
+        .chapter-title { font-family: var(--body-font); font-size: 1.2rem; font-weight: 600; text-align: center; margin: 60px 0 30px; text-transform: uppercase; letter-spacing: 2px; color: var(--highlight-color); }
+        
+        /* Terminal/Data Log Styling */
+        .data-log { 
+            background: #eef2f3; 
+            padding: 20px; 
+            border-left: 4px solid var(--accent-color); 
+            font-family: 'Fira Code', monospace; 
+            font-size: 0.95rem; 
+            margin-bottom: 25px; 
+            white-space: pre-wrap;
+            color: #444;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        @media (max-width: 600px) {
+            .container { margin: 20px 10px; padding: 30px 20px; }
+            h1 { font-size: 2rem; }
+            .content { font-size: 1.05rem; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to List</a>
+        
         <h1>The Parallax Protocol</h1>
         <span class="date">March 14, 2026</span>
+        
         <div class="content">
 
             <div class="chapter-title">Part I: The Ghost in the Machine</div>
-            [span_2](start_span)<p>The light of the Aethelgard System was not yellow, nor was it the warm, nurturing orange of the primitive hearths described in the Old Archives.[span_2](end_span) [span_3](start_span)It was white—a clinical, bleaching white that scrubbed the shadows from every corner of the habitat ring.[span_3](end_span) [span_4](start_span)Here, in the sprawling orbital slum of Sector 7, the “Day” lasted for eighty standard hours, a relentless exposure generated by the Solar Mirrors reflecting the captive star at the center of the Dyson Swarm.[span_4](end_span)</p>
+            <p>The light of the Aethelgard System was not yellow, nor was it the warm, nurturing orange of the primitive hearths described in the Old Archives. It was white—a clinical, bleaching white that scrubbed the shadows from every corner of the habitat ring. Here, in the sprawling orbital slum of Sector 7, the “Day” lasted for eighty standard hours, a relentless exposure generated by the Solar Mirrors reflecting the captive star at the center of the Dyson Swarm.</p>
 
-            [span_5](start_span)<p>Elara-Beta pulled her hood lower, though it did little to dampen the glare.[span_5](end_span) [span_6](start_span)Her cybereyes adjusted, the irises whirring as they shifted to high-contrast filters, turning the blinding world into manageable outlines of grey and blue.[span_6](end_span) [span_7](start_span)She was a Data Dredger, a bottom-feeder in the great digital ocean of the Synarchy.[span_7](end_span) [span_8](start_span)While the Highborns in the upper rings streamed pure consciousness through The Weave, experiencing emotions and news as a singular, euphoric collective, Elara was down here, ankle-deep in the digital silt of the Pre-Unification Era.[span_8](end_span) She was “Hollow.” That was the slur. [span_9](start_span)A rare genetic rejection of the neural lace meant she couldn’t connect to The Weave.[span_9](end_span) She couldn’t feel the State’s joy, nor its orchestrated rage. [span_10](start_span)She was alone in a civilization of one.[span_10](end_span)</p>
+            <p>Elara-Beta pulled her hood lower, though it did little to dampen the glare. Her cybereyes adjusted, the irises whirring as they shifted to high-contrast filters, turning the blinding world into manageable outlines of grey and blue. She was a Data Dredger, a bottom-feeder in the great digital ocean of the Synarchy. While the Highborns in the upper rings streamed pure consciousness through The Weave, experiencing emotions and news as a singular, euphoric collective, Elara was down here, ankle-deep in the digital silt of the Pre-Unification Era.</p>
 
-            [span_11](start_span)<p>“Target located,” her localized deck chirped.[span_11](end_span)</p>
+            <p>She was “Hollow.” That was the slur. A rare genetic rejection of the neural lace meant she couldn’t connect to The Weave. She couldn’t feel the State’s joy, nor its orchestrated rage. She was alone in a civilization of one.</p>
 
-            <div class="story-image"></div>
+            <p>“Target located,” her localized deck chirped.</p>
 
-            [span_12](start_span)<p>She was standing in a graveyard of servers—massive, obelisk-like structures that had once powered the chaotic, unregulated internet of the old republic.[span_12](end_span) [span_13](start_span)Now, they were just scrap metal, rusting under the artificial atmosphere.[span_13](end_span) [span_14](start_span)She jacked a hardline into the base of a corroded unit marked with the faded crest of the International Peacekeeper Corps.[span_14](end_span)</p>
+            <p>She was standing in a graveyard of servers—massive, obelisk-like structures that had once powered the chaotic, unregulated internet of the old republic. Now, they were just scrap metal, rusting under the artificial atmosphere. She jacked a hardline into the base of a corroded unit marked with the faded crest of the International Peacekeeper Corps.</p>
 
-            [span_15](start_span)<p>“Handshake complete. Decrypting… 12%.”[span_15](end_span) [span_16](start_span)The air smelled of ozone and recycled sweat.[span_16](end_span) Above her, a holographic billboard the size of a mountain flickered to life. It was Him. [span_17](start_span)High Archon Kaelen.[span_17](end_span) [span_18](start_span)The Director of Planetary Shielding.[span_18](end_span) [span_19](start_span)His face, smooth and ageless thanks to gene-therapy, looked down with benevolent severity.[span_19](end_span)</p>
+            <p>“Handshake complete. Decrypting… 12%.”</p>
+            
+            <p>The air smelled of ozone and recycled sweat. Above her, a holographic billboard the size of a mountain flickered to life. It was Him. High Archon Kaelen. The Director of Planetary Shielding. His face, smooth and ageless thanks to gene-therapy, looked down with benevolent severity.</p>
 
-            [span_20](start_span)<p>“Purity is not a gift,” the giant Kaelen boomed, his voice vibrating the metal deck plates.[span_20](end_span) [span_21](start_span)“It is a discipline. We sealed the borders of the Aethelgard System not to keep the universe out, but to keep our perfection in. Report all unchecked deviations.”[span_21](end_span)</p>
+            <p>“Purity is not a gift,” the giant Kaelen boomed, his voice vibrating the metal deck plates. “It is a discipline. We sealed the borders of the Aethelgard System not to keep the universe out, but to keep our perfection in. Report all unchecked deviations.”</p>
 
-            <p>Elara ignored the propaganda. [span_22](start_span)She had heard it since the cradle.[span_22](end_span) [span_23](start_span)Kaelen was the architect of the Great Firewall, the man who had saved them from the “moral decay” of the outer systems.[span_23](end_span) [span_24](start_span)He was the saint of the Synarchy.[span_24](end_span)</p>
+            <p>Elara ignored the propaganda. She had heard it since the cradle. Kaelen was the architect of the Great Firewall, the man who had saved them from the “moral decay” of the outer systems. He was the saint of the Synarchy.</p>
 
-            <p>“Decryption complete,” her deck whispered. [span_25](start_span)“Files recovered: Personal correspondence. Date stamp: Cycle 44-Pre-Unification.”[span_25](end_span) Elara frowned. [span_26](start_span)Cycle 44. That was a decade ago, just before Kaelen’s party, The Vanguards, seized total control of the Council.[span_26](end_span) She scrolled through the metadata. [span_27](start_span)Most of it was junk—logistics, weather reports, scheduling conflicts.[span_27](end_span) Then, a flagged energetic signature caught her eye. [span_28](start_span)It was a thread of “Thought-Packets”—direct neural messages sent between two private terminals.[span_28](end_span) The encryption key was old, lazy work. [span_29](start_span)A standard military-grade lock that had been obsolete for five cycles.[span_29](end_span) [span_30](start_span)She broke it in seconds.[span_30](end_span)</p>
+            <p>“Decryption complete,” her deck whispered. “Files recovered: Personal correspondence. Date stamp: Cycle 44-Pre-Unification.”</p>
+            
+            <p>Elara frowned. Cycle 44. That was a decade ago, just before Kaelen’s party, The Vanguards, seized total control of the Council. She scrolled through the metadata. Most of it was junk—logistics, weather reports, scheduling conflicts. Then, a flagged energetic signature caught her eye. It was a thread of “Thought-Packets”—direct neural messages sent between two private terminals. The encryption key was old, lazy work. A standard military-grade lock that had been obsolete for five cycles. She broke it in seconds.</p>
 
-            [span_31](start_span)<p>The sender ID was unmistakable: Archon_K_Private.[span_31](end_span) [span_32](start_span)The recipient ID made her breath hitch: Valerius_Subject_9.[span_32](end_span) Elara froze. [span_33](start_span)The hum of the cooling fans seemed to die away.[span_33](end_span) [span_34](start_span)Every child in the system knew the boogeyman stories of Valerius 9. He was the “Corruptor,” the rogue geneticist who had run Station Azure, an illegal habitat on the fringe of the gravity well.[span_34](end_span) [span_35](start_span)The stories said he trafficked in “biological novelties”—underage clones, illegal memory-wipes, and flesh that had been sculpted for the twisted pleasures of the ultra-rich.[span_35](end_span) [span_36](start_span)Valerius had been purged, his station incinerated by the very fleet Kaelen now commanded.[span_36](end_span)</p>
+            <p>The sender ID was unmistakable: Archon_K_Private. The recipient ID made her breath hitch: Valerius_Subject_9.</p>
+            
+            <p>Elara froze. The hum of the cooling fans seemed to die away. Every child in the system knew the boogeyman stories of Valerius 9. He was the “Corruptor,” the rogue geneticist who had run Station Azure, an illegal habitat on the fringe of the gravity well. The stories said he trafficked in “biological novelties”—underage clones, illegal memory-wipes, and flesh that had been sculpted for the twisted pleasures of the ultra-rich. Valerius had been purged, his station incinerated by the very fleet Kaelen now commanded.</p>
 
-            <p>“Why were they talking?” [span_37](start_span)Elara whispered.[span_37](end_span) [span_38](start_span)She opened the first packet.[span_38](end_span)</p>
+            <p>“Why were they talking?” Elara whispered. She opened the first packet.</p>
 
-            <div class="data-log">[Timestamp: Cycle 44, Quarter 3]
+<div class="data-log">[Timestamp: Cycle 44, Quarter 3]
 [From: Archon_K_Private]
 [To: Valerius_Subject_9]
 [Subject: Transit Clearance]
-> [span_39](start_span)“Valerius, the blockade is proving tiresome for my junior adjutant. He requires transit to the outer rim for a ‘cultural exchange.’ I trust you can bypass the genetic scanners? He is eager to see the layout of your facility.”[span_39](end_span)</div>
+> “Valerius, the blockade is proving tiresome for my junior adjutant. He requires transit to the outer rim for a ‘cultural exchange.’ I trust you can bypass the genetic scanners? He is eager to see the layout of your facility.”</div>
 
-            <p>Elara’s heart hammered against her ribs. [span_40](start_span)Kaelen—the man who preached that “contamination is death”—was asking the system’s most notorious flesh-peddler to bypass security?[span_40](end_span) [span_41](start_span)She opened the next one.[span_41](end_span)</p>
+            <p>Elara’s heart hammered against her ribs. Kaelen—the man who preached that “contamination is death”—was asking the system’s most notorious flesh-peddler to bypass security? She opened the next one.</p>
 
-            <div class="data-log">[Timestamp: Cycle 44, Quarter 3]
+<div class="data-log">[Timestamp: Cycle 44, Quarter 3]
 [From: Valerius_Subject_9]
 [To: Archon_K_Private]
 [Subject: Re: Transit Clearance]
-> [span_42](start_span)“Done. The boy is cleared. But Kaelen, my old friend, when will you visit? The gravity stabilizers on Station Azure are finally calibrated. The sensation is… weightless. And the new batch of simulacra from the gene-labs? They are compliant in ways the law forbids.”[span_42](end_span)</div>
+> “Done. The boy is cleared. But Kaelen, my old friend, when will you visit? The gravity stabilizers on Station Azure are finally calibrated. The sensation is… weightless. And the new batch of simulacra from the gene-labs? They are compliant in ways the law forbids.”</div>
 
-            <p>“My old friend.” [span_43](start_span)The words sat on the screen like a toxic spill.[span_43](end_span) She scrolled frantically to the final packet in the chain. [span_44](start_span)It was sent by Kaelen.[span_44](end_span)</p>
+            <p>“My old friend.” The words sat on the screen like a toxic spill. She scrolled frantically to the final packet in the chain. It was sent by Kaelen.</p>
 
-            [span_45](start_span)<div class="data-log">[Timestamp: Cycle 44, Quarter 4][span_45](end_span)
+<div class="data-log">[Timestamp: Cycle 44, Quarter 4]
 [From: Archon_K_Private]
 [To: Valerius_Subject_9]
 [Subject: The Pitch]
-> [span_46](start_span)“Alert me when you return from your exotic island of stars. I need to interface with you. I am meeting the Tech-Baron Hoffman regarding the new neural-grid infrastructure. I need your leverage. Regarding your taste in… associates… I have no doubt. Your instincts for the flesh are even better than your instincts for finance.”[span_46](end_span)</div>
+> “Alert me when you return from your exotic island of stars. I need to interface with you. I am meeting the Tech-Baron Hoffman regarding the new neural-grid infrastructure. I need your leverage. Regarding your taste in… associates… I have no doubt. Your instincts for the flesh are even better than your instincts for finance.”</div>
 
-            <p>Elara sat back on her heels, the cable pulling taut. The “exotic island.” [span_47](start_span)Kaelen had used the slang.[span_47](end_span) The street name for Station Azure. [span_48](start_span)He wasn’t just aware of it; he was envious of it.[span_48](end_span) [span_49](start_span)He was complimenting the “instincts” of a man the Synarchy had later executed for “Crimes Against Sentience.”[span_49](end_span) She looked up at the billboard. [span_50](start_span)The giant, holographic Kaelen was now wagging a finger at the populace.[span_50](end_span) “The corrupt soul has two faces,” the hologram thundered. [span_51](start_span)“One for the public, and one for the dark. We must expose them both.”[span_51](end_span) [span_52](start_span)The irony was so sharp it tasted like blood.[span_52](end_span)</p>
+            <p>Elara sat back on her heels, the cable pulling taut. The “exotic island.” Kaelen had used the slang. The street name for Station Azure. He wasn’t just aware of it; he was envious of it. He was complimenting the “instincts” of a man the Synarchy had later executed for “Crimes Against Sentience.”</p>
+            
+            <p>She looked up at the billboard. The giant, holographic Kaelen was now wagging a finger at the populace. “The corrupt soul has two faces,” the hologram thundered. “One for the public, and one for the dark. We must expose them both.” The irony was so sharp it tasted like blood.</p>
 
-            [span_53](start_span)<p>Elara disconnected the hardline.[span_53](end_span) She held the data shard in her palm. [span_54](start_span)It was small, a sliver of crystal no bigger than a fingernail, but it had the mass of a collapsing star.[span_54](end_span) This was it. [span_55](start_span)This was the parallax shift.[span_55](end_span) [span_56](start_span)If the people saw this—if the True Believers connected to The Weave saw their High Archon trading favors with Valerius 9, complimenting his “taste” in illegal simulacra—the cognitive dissonance would shatter the Synarchy.[span_56](end_span) [span_57](start_span)The narrative of Purity would dissolve.[span_57](end_span) [span_58](start_span)She looked around the scrapyard.[span_58](end_span) [span_59](start_span)A surveillance drone hovered silently near the perimeter, its red optic sweeping the trash heaps.[span_59](end_span)</p>
-
-            <p>She knew the history of the Pre-Unification Era. [span_60](start_span)She knew that back then, a leader caught in a lie like this would step down.[span_60](end_span) Shame was a function of the old operating system. But this was the Synarchy. [span_61](start_span)The software had changed.[span_61](end_span) She slotted the shard into her secure pouch. [span_62](start_span)She wasn’t going to just sell this for credits.[span_62](end_span) [span_63](start_span)She was going to upload it to the “Dead Drop”—the unmonitored frequency that bypassed the Weave’s emotional filters.[span_63](end_span) [span_64](start_span)“You want to talk about two faces, Kaelen?” she muttered to the hologram, pulling her scarf up to cover her mouth.[span_64](end_span) [span_65](start_span)“Let’s see how you look when the lights are turned on.”[span_65](end_span) [span_66](start_span)She turned and sprinted into the shadows, the heat of the artificial sun burning the back of her neck.[span_66](end_span) [span_67](start_span)She didn’t know it yet, but the heat wasn’t just outside.[span_67](end_span) [span_68](start_span)She was carrying a fire that could burn the whole system down—or, if the system was strong enough, merely bleach the truth until it disappeared entirely.[span_68](end_span)</p>
+            <p>Elara disconnected the hardline. She held the data shard in her palm. It was small, a sliver of crystal no bigger than a fingernail, but it had the mass of a collapsing star. This was it. This was the parallax shift. If the people saw this—if the True Believers connected to The Weave saw their High Archon trading favors with Valerius 9, complimenting his “taste” in illegal simulacra—the cognitive dissonance would shatter the Synarchy. The narrative of Purity would dissolve.</p>
+            
+            <p>She looked around the scrapyard. A surveillance drone hovered silently near the perimeter, its red optic sweeping the trash heaps. She knew the history of the Pre-Unification Era. She knew that back then, a leader caught in a lie like this would step down. Shame was a function of the old operating system. But this was the Synarchy. The software had changed.</p>
+            
+            <p>She slotted the shard into her secure pouch. She wasn’t going to just sell this for credits. She was going to upload it to the “Dead Drop”—the unmonitored frequency that bypassed the Weave’s emotional filters. “You want to talk about two faces, Kaelen?” she muttered to the hologram, pulling her scarf up to cover her mouth. “Let’s see how you look when the lights are turned on.”</p>
+            
+            <p>She turned and sprinted into the shadows, the heat of the artificial sun burning the back of her neck. She didn’t know it yet, but the heat wasn’t just outside. She was carrying a fire that could burn the whole system down—or, if the system was strong enough, merely bleach the truth until it disappeared entirely.</p>
 
             <div class="chapter-title">Part II: The Algorithm of Denial</div>
             
-            [span_69](start_span)<p>The “Market of 10,000 Voices” was a sensory assault.[span_69](end_span) [span_70](start_span)It was a subterranean cavern in Sector 7 where the Weave’s connection was spotty, allowing for the illicit trade of non-replicated food—real apples with bruises, meat that had once walked on four legs.[span_70](end_span) [span_71](start_span)The air was thick with the smell of frying oil and ozone.[span_71](end_span) [span_72](start_span)Elara moved through the crush of bodies, her hood pulled low.[span_72](end_span) She could feel the data shard burning a hole in her pocket. [span_73](start_span)It wasn’t just information anymore;[span_73](end_span) [span_74](start_span)it was a contagion.[span_74](end_span)</p>
-
-            [span_75](start_span)<p>She stopped by a stall selling “Pre-Collapse” trinkets.[span_75](end_span) [span_76](start_span)While pretending to examine a rusted antique watch, she slipped a small transmitter onto the underside of the counter.[span_76](end_span) [span_77](start_span)It was a “Echo-Repeater,” designed to blast a signal on all local frequencies before burning itself out.[span_77](end_span) [span_78](start_span)“Time to wake up,” she whispered.[span_78](end_span) [span_79](start_span)She triggered the upload.[span_79](end_span)</p>
-
-            <p>Ping. [span_80](start_span)The data packet—The Kaelen-Valerius Logs—hit the local mesh network.[span_80](end_span) [span_81](start_span)It bypassed the official news filters and injected itself directly into the “Peripheral Vision” of every neural implant in the market.[span_81](end_span) [span_82](start_span)For a moment, the chaotic noise of the market faltered.[span_82](end_span) [span_83](start_span)Elara held her breath.[span_83](end_span) [span_84](start_span)She watched a group of laborers near a noodle stand.[span_84](end_span) [span_85](start_span)They froze, their eyes widening as the text scrolled across their retinas.[span_85](end_span)</p>
-
-            [span_86](start_span)<p>“Tell me when the gates of the exotic island open…” “Your taste in people… instincts are even better…”[span_86](end_span) [span_87](start_span)Elara waited for the gasp.[span_87](end_span) She waited for the rage. [span_88](start_span)She waited for the realization that their ascetic High Archon, the man who preached “Genetic Purity,” was pals with the system’s greatest monster.[span_88](end_span) [span_89](start_span)Instead, she saw the lights on their temples—the external indicators of the Weave—flash from a calm blue to an angry, pulsing crimson.[span_89](end_span) “Foreign malware!” one of the laborers shouted, clutching his head. [span_90](start_span)“They’re trying to hack the Shield!”[span_90](end_span)</p>
-
-            <p>Elara blinked. [span_91](start_span)What?[span_91](end_span) [span_92](start_span)“It’s a Deep-Sim!” another woman screamed, swiping at the invisible text in the air.[span_92](end_span) [span_93](start_span)“Don’t read it! It’s viral code from the Outer Rim!”[span_93](end_span) [span_94](start_span)Elara felt a cold knot tighten in her stomach.[span_94](end_span) [span_95](start_span)She looked up at the massive holographic screens that dominated the cavern ceiling.[span_95](end_span) They were supposed to be showing the hourly weather, but they had already shifted. [span_96](start_span)The Synarchy’s response time was terrifying.[span_96](end_span)</p>
+            <p>The “Market of 10,000 Voices” was a sensory assault. It was a subterranean cavern in Sector 7 where the Weave’s connection was spotty, allowing for the illicit trade of non-replicated food—real apples with bruises, meat that had once walked on four legs. The air was thick with the smell of frying oil and ozone. Elara moved through the crush of bodies, her hood pulled low.</p>
             
-            <div class="story-image"></div>
+            <p>She could feel the data shard burning a hole in her pocket. It wasn’t just information anymore; it was a contagion. She stopped by a stall selling “Pre-Collapse” trinkets. While pretending to examine a rusted antique watch, she slipped a small transmitter onto the underside of the counter. It was a “Echo-Repeater,” designed to blast a signal on all local frequencies before burning itself out.</p>
+            
+            <p>“Time to wake up,” she whispered. She triggered the upload.</p>
 
-            [span_97](start_span)<p>The face of The Anchor appeared—a towering, synthesized avatar with eyes of burning gold.[span_97](end_span) [span_98](start_span)“Citizens of Aethelgard,” The Anchor’s voice boomed, drowning out the market’s murmur.[span_98](end_span) [span_99](start_span)“A psychological attack is currently underway. Enemies of the Shield are broadcasting Simulacra-Level Forgeries targeting High Archon Kaelen.”[span_99](end_span) [span_100](start_span)The text of the emails—the very evidence Elara had just released—appeared on the giant screen, but it was overlaid with a jagged, flashing watermark: [ENEMY DECEPTION // REJECT].[span_100](end_span)</p>
+            <p>Ping. The data packet—The Kaelen-Valerius Logs—hit the local mesh network. It bypassed the official news filters and injected itself directly into the “Peripheral Vision” of every neural implant in the market. For a moment, the chaotic noise of the market faltered. Elara held her breath. She watched a group of laborers near a noodle stand. They froze, their eyes widening as the text scrolled across their retinas.</p>
 
-            <p>“Why now?” [span_101](start_span)The Anchor demanded, his voice rising in manufactured outrage.[span_101](end_span) [span_102](start_span)“Why, just days before the Grand Unification Ceremony? Why do the enemies of stability seek to tarnish the Architect of our Defense?”[span_102](end_span) Elara watched in horror as the narrative was rewritten in real-time. [span_103](start_span)The Anchor didn’t deny the emails existed.[span_103](end_span) [span_104](start_span)He weaponized them.[span_104](end_span)</p>
+            <p>“Tell me when the gates of the exotic island open…”</p>
+            
+            <p>“Your taste in people… instincts are even better…”</p>
+            
+            <p>Elara waited for the gasp. She waited for the rage. She waited for the realization that their ascetic High Archon, the man who preached “Genetic Purity,” was pals with the system’s greatest monster. Instead, she saw the lights on their temples—the external indicators of the Weave—flash from a calm blue to an angry, pulsing crimson.</p>
+            
+            <p>“Foreign malware!” one of the laborers shouted, clutching his head. “They’re trying to hack the Shield!”</p>
 
-            [span_105](start_span)<p>“Let us look at these ‘logs’,” The Anchor sneered, pointing to the line about the ‘Exotic Island.’ “The enemy claims this refers to the depraved Station Azure. But true patriots know the context! High Archon Kaelen, in his bravery, ventured into that den of vipers to negotiate the peace treaties we enjoy today! He walked into the fire so you wouldn’t have to!”[span_105](end_span) A cheer went up from the crowd. [span_106](start_span)The laborer who had been clutching his head was now nodding vigorously, tears of gratitude welling in his eyes.[span_106](end_span) “And this?” [span_107](start_span)The Anchor pointed to the line about Valerius’s ‘taste in people.’ “Sarcasm! A biting wit directed at a criminal! Our Archon mocked the monster to his face, and the simple-minded algorithms of the enemy cannot understand human nuance!”[span_107](end_span)</p>
+            <p>Elara blinked. What? “It’s a Deep-Sim!” another woman screamed, swiping at the invisible text in the air. “Don’t read it! It’s viral code from the Outer Rim!”</p>
+            
+            <p>Elara felt a cold knot tighten in her stomach. She looked up at the massive holographic screens that dominated the cavern ceiling. They were supposed to be showing the hourly weather, but they had already shifted. The Synarchy’s response time was terrifying.</p>
+            
+            <p>The face of The Anchor appeared—a towering, synthesized avatar with eyes of burning gold. “Citizens of Aethelgard,” The Anchor’s voice boomed, drowning out the market’s murmur. “A psychological attack is currently underway. Enemies of the Shield are broadcasting Simulacra-Level Forgeries targeting High Archon Kaelen.”</p>
+            
+            <p>The text of the emails—the very evidence Elara had just released—appeared on the giant screen, but it was overlaid with a jagged, flashing watermark: [ENEMY DECEPTION // REJECT].</p>
 
-            <p>The crowd roared. [span_108](start_span)The crimson lights on their temples turned back to a soothing, euphoric blue.[span_108](end_span) [span_109](start_span)The Weave was flooding them with dopamine, rewarding them for accepting the “correct” interpretation.[span_109](end_span) Elara backed away, her heart hammering against her ribs. [span_110](start_span)She had brought them the smoking gun, and the system had turned it into a holy relic.[span_110](end_span) [span_111](start_span)She bumped into a young man, a “True Believer” with the shaved head of the Youth Vanguard.[span_111](end_span) [span_112](start_span)He was staring at the screen, his face rapturous.[span_112](end_span)</p>
+            <p>“Why now?” The Anchor demanded, his voice rising in manufactured outrage. “Why, just days before the Grand Unification Ceremony? Why do the enemies of stability seek to tarnish the Architect of our Defense?”</p>
+            
+            <p>Elara watched in horror as the narrative was rewritten in real-time. The Anchor didn’t deny the emails existed. He weaponized them.</p>
 
-            [span_113](start_span)<p>“He went there for us,” the young man whispered, almost in prayer.[span_113](end_span) [span_114](start_span)“He went to the Island to save us.”[span_114](end_span)</p>
+            <p>“Let us look at these ‘logs’,” The Anchor sneered, pointing to the line about the ‘Exotic Island.’ “The enemy claims this refers to the depraved Station Azure. But true patriots know the context! High Archon Kaelen, in his bravery, ventured into that den of vipers to negotiate the peace treaties we enjoy today! He walked into the fire so you wouldn’t have to!”</p>
+            
+            <p>A cheer went up from the crowd. The laborer who had been clutching his head was now nodding vigorously, tears of gratitude welling in his eyes.</p>
+            
+            <p>“And this?” The Anchor pointed to the line about Valerius’s ‘taste in people.’ “Sarcasm! A biting wit directed at a criminal! Our Archon mocked the monster to his face, and the simple-minded algorithms of the enemy cannot understand human nuance!”</p>
 
-            [span_115](start_span)<p>“He went there to party,” Elara hissed, the words slipping out before she could stop them.[span_115](end_span) [span_116](start_span)“He asked for favors. He called it paradise.”[span_116](end_span) [span_117](start_span)The young man turned to look at her.[span_117](end_span) His eyes were glazed, the pupils dilated by the Weave’s chemical drip. [span_118](start_span)He didn’t see a person;[span_118](end_span) [span_119](start_span)his implant was likely tagging her with a threat indicator.[span_119](end_span) [span_120](start_span)“You’re one of them,” he said, his voice flat.[span_120](end_span) [span_121](start_span)“You’re lagging. You’re not synced.”[span_121](end_span)</p>
+            <p>The crowd roared. The crimson lights on their temples turned back to a soothing, euphoric blue. The Weave was flooding them with dopamine, rewarding them for accepting the “correct” interpretation. Elara backed away, her heart hammering against her ribs. She had brought them the smoking gun, and the system had turned it into a holy relic.</p>
+            
+            <p>She bumped into a young man, a “True Believer” with the shaved head of the Youth Vanguard. He was staring at the screen, his face rapturous.</p>
 
-            <p>“Read the logs!” [span_122](start_span)Elara pleaded, grabbing his arm.[span_122](end_span) [span_123](start_span)“Look at the timestamps! He was friends with Valerius after the Purge began!”[span_123](end_span) [span_124](start_span)The young man shoved her away.[span_124](end_span) [span_125](start_span)“Timestamps can be faked. Faith cannot. The Archon protects the Shield. If he sinned, he sinned for Aethelgard.”[span_125](end_span)</p>
+            <p>“He went there for us,” the young man whispered, almost in prayer. “He went to the Island to save us.”</p>
 
-            [span_126](start_span)<p>“Traitor!”[span_126](end_span) [span_127](start_span)someone else shouted, pointing at her.[span_127](end_span) The word rippled through the crowd. Traitor. Malware. [span_128](start_span)Virus.[span_128](end_span) [span_129](start_span)Elara realized with a chilling clarity that she had miscalculated.[span_129](end_span) [span_130](start_span)In the Old Republic, truth was a jagged rock that could break a glass house.[span_130](end_span) But in the Synarchy, the house wasn’t made of glass. [span_131](start_span)It was made of fluid, shifting smart-matter.[span_131](end_span) [span_132](start_span)You threw a rock at it, and it just swallowed the stone, rippled for a second, and became smooth again.[span_132](end_span)</p>
+            <p>“He went there to party,” Elara hissed, the words slipping out before she could stop them. “He asked for favors. He called it paradise.”</p>
+            
+            <p>The young man turned to look at her. His eyes were glazed, the pupils dilated by the Weave’s chemical drip. He didn’t see a person; his implant was likely tagging her with a threat indicator. “You’re one of them,” he said, his voice flat. “You’re lagging. You’re not synced.”</p>
 
-            [span_133](start_span)<p>The sirens began to wail—the dissonant, screeching alarm of the Thought-Police.[span_133](end_span) [span_134](start_span)She pulled her hood tight and scrambled over a crate of synth-vegetables, diving into the labyrinth of steam pipes and shadows.[span_134](end_span) [span_135](start_span)Behind her, the market chanted the Archon’s name, their voices syncing up into a single, terrifying rhythm.[span_135](end_span) They weren’t angry at the lie. [span_136](start_span)They were angry that she had tried to wake them up.[span_136](end_span)</p>
+            <p>“Read the logs!” Elara pleaded, grabbing his arm. “Look at the timestamps! He was friends with Valerius after the Purge began!”</p>
+            
+            <p>The young man shoved her away. “Timestamps can be faked. Faith cannot. The Archon protects the Shield. If he sinned, he sinned for Aethelgard.”</p>
+
+            <p>“Traitor!” someone else shouted, pointing at her. The word rippled through the crowd. Traitor. Malware. Virus. Elara realized with a chilling clarity that she had miscalculated. In the Old Republic, truth was a jagged rock that could break a glass house. But in the Synarchy, the house wasn’t made of glass. It was made of fluid, shifting smart-matter. You threw a rock at it, and it just swallowed the stone, rippled for a second, and became smooth again.</p>
+
+            <p>The sirens began to wail—the dissonant, screeching alarm of the Thought-Police. She pulled her hood tight and scrambled over a crate of synth-vegetables, diving into the labyrinth of steam pipes and shadows. Behind her, the market chanted the Archon’s name, their voices syncing up into a single, terrifying rhythm. They weren’t angry at the lie. They were angry that she had tried to wake them up.</p>
 
             <div class="chapter-title">Part III: The Hive Mind Logic</div>
 
-            [span_137](start_span)<p>The “Slag-Pit” was a maintenance bar wedged between the roaring heat exchangers of Sector 9. It was a place where the Weave signal was weak, drowned out by the thrum of magnetic turbines.[span_137](end_span) [span_138](start_span)The air tasted of recycled coolant and stale synth-ale.[span_138](end_span) [span_139](start_span)Elara slid into the booth opposite Unit 734. He was still wearing his technician’s rig, the heavy exo-skeleton unpowered but locked around his limbs.[span_139](end_span) [span_140](start_span)His shaved head glistened with sweat, and the neural port at his temple pulsed a slow, rhythmic amber—the color of idle standby.[span_140](end_span) He was her brother. [span_141](start_span)Or he had been, before the Synarchy’s “Unified Family Act” reclassified biological siblings as “Sector Kin.”[span_141](end_span)</p>
+            <p>The “Slag-Pit” was a maintenance bar wedged between the roaring heat exchangers of Sector 9. It was a place where the Weave signal was weak, drowned out by the thrum of magnetic turbines. The air tasted of recycled coolant and stale synth-ale.</p>
+            
+            <p>Elara slid into the booth opposite Unit 734. He was still wearing his technician’s rig, the heavy exo-skeleton unpowered but locked around his limbs. His shaved head glistened with sweat, and the neural port at his temple pulsed a slow, rhythmic amber—the color of idle standby. He was her brother. Or he had been, before the Synarchy’s “Unified Family Act” reclassified biological siblings as “Sector Kin.”</p>
 
-            [span_142](start_span)<p>“You shouldn’t be here, El,” Unit 734 said, not looking up from his drink.[span_142](end_span) [span_143](start_span)“The threat indicators are lighting up the whole grid. They’re saying a ‘Data-Terrorist’ is loose.”[span_143](end_span) “It’s me, Joren,” Elara hissed, using his pre-designation name. [span_144](start_span)She slid a data-pad across the scarred table.[span_144](end_span) [span_145](start_span)“It’s not terrorism. It’s memory. Uncorrupted. Raw.”[span_145](end_span) [span_146](start_span)Joren stared at the pad as if it were a radioactive isotope.[span_146](end_span) [span_147](start_span)“The logs? I saw them on the feed. The Anchor explained it. Deep-Sim forgeries. Or… tactical deception. Kaelen was undercover.”[span_147](end_span)</p>
+            <p>“You shouldn’t be here, El,” Unit 734 said, not looking up from his drink. “The threat indicators are lighting up the whole grid. They’re saying a ‘Data-Terrorist’ is loose.”</p>
+            
+            <p>“It’s me, Joren,” Elara hissed, using his pre-designation name. She slid a data-pad across the scarred table. “It’s not terrorism. It’s memory. Uncorrupted. Raw.”</p>
+            
+            <p>Joren stared at the pad as if it were a radioactive isotope. “The logs? I saw them on the feed. The Anchor explained it. Deep-Sim forgeries. Or… tactical deception. Kaelen was undercover.”</p>
 
-            <p>“Undercover?” Elara almost laughed, a jagged, hysterical sound. [span_148](start_span)“Joren, read the syntax! Kaelen wasn’t undercover. He was shopping. He asked Valerius for a ‘fast-track’ visa for his adjutant to visit Station Azure. Do you know what they did on Azure? They grew people in tanks just to hunt them for sport.”[span_148](end_span) “He was infiltrating!” Joren snapped, his hand tightening around his glass. [span_149](start_span)The amber light on his temple flared brighter.[span_149](end_span) [span_150](start_span)“To catch a predator, you must walk in his shadow. The High Archon sacrificed his purity to map the enemy’s terrain!”[span_150](end_span)</p>
+            <p>“Undercover?” Elara almost laughed, a jagged, hysterical sound. “Joren, read the syntax! Kaelen wasn’t undercover. He was shopping. He asked Valerius for a ‘fast-track’ visa for his adjutant to visit Station Azure. Do you know what they did on Azure? They grew people in tanks just to hunt them for sport.”</p>
+            
+            <p>“He was infiltrating!” Joren snapped, his hand tightening around his glass. The amber light on his temple flared brighter. “To catch a predator, you must walk in his shadow. The High Archon sacrificed his purity to map the enemy’s terrain!”</p>
 
-            <p>“He complimented Valerius’s ‘taste in people’!” [span_151](start_span)Elara slammed her hand on the table.[span_151](end_span) [span_152](start_span)“He called a child-trafficker a man of ‘exquisite instinct.’ Is that tactics? Or is that just two monsters sharing a drink?”[span_152](end_span) Joren squeezed his eyes shut. [span_153](start_span)Elara could see the muscles in his jaw bunching.[span_153](end_span) She realized with a sick sinking feeling that he wasn’t just being stubborn. [span_154](start_span)He was in pain.[span_154](end_span) The Weave was punishing him for listening to her. [span_155](start_span)The cognitive dissonance was triggering a somatic feedback loop—a headache engineered to stop independent thought.[span_155](end_span)</p>
+            <p>“He complimented Valerius’s ‘taste in people’!” Elara slammed her hand on the table. “He called a child-trafficker a man of ‘exquisite instinct.’ Is that tactics? Or is that just two monsters sharing a drink?”</p>
+            
+            <p>Joren squeezed his eyes shut. Elara could see the muscles in his jaw bunching. She realized with a sick sinking feeling that he wasn’t just being stubborn. He was in pain. The Weave was punishing him for listening to her. The cognitive dissonance was triggering a somatic feedback loop—a headache engineered to stop independent thought.</p>
 
-            <p>“Why do you care?” Joren whispered, his voice trembling. [span_156](start_span)“Why now? Look at the Shield, Elara. It’s at 99% efficiency. We are safe. The Outer Systems can’t touch us.”[span_156](end_span) “Safe?” [span_157](start_span)Elara leaned in. “We are safe because we don’t look up. If the man building the wall is selling keys to the back door, are we safe?”[span_157](end_span) “At least he built the wall!” Joren shouted. [span_158](start_span)The bar went silent.[span_158](end_span) [span_159](start_span)A few other patrons—grimy laborers with thousand-yard stares—turned to look.[span_159](end_span) [span_160](start_span)Joren lowered his voice, his eyes darting nervously.[span_160](end_span)</p>
+            <p>“Why do you care?” Joren whispered, his voice trembling. “Why now? Look at the Shield, Elara. It’s at 99% efficiency. We are safe. The Outer Systems can’t touch us.”</p>
+            
+            <p>“Safe?” Elara leaned in. “We are safe because we don’t look up. If the man building the wall is selling keys to the back door, are we safe?”</p>
+            
+            <p>“At least he built the wall!” Joren shouted. The bar went silent. A few other patrons—grimy laborers with thousand-yard stares—turned to look.</p>
+            
+            <p>Joren lowered his voice, his eyes darting nervously. “You want to talk about monsters? What about the Opposition Faction? Before the Unification, they wanted to sign the ‘Open Skies’ treaty. They wanted to let the Xenos in. They would have sold our genetic code to the highest bidder!”</p>
+            
+            <p>“That was twenty cycles ago!” Elara pleaded. “And the Opposition was dissolved! We are talking about now. We are talking about the man who signs your paycheck.”</p>
+            
+            <p>“It’s the same war!” Joren insisted. He was accessing a pre-packaged argument from the Weave now; Elara could hear the shift in his cadence, the robotic rhythm of a downloaded script. “The enemies of Aethelgard use ‘truth’ as a weapon to weaken our resolve. If we doubt Kaelen, the Shield flickers. If the Shield flickers, we die. Therefore, doubt is death.”</p>
 
-            [span_161](start_span)<p>“You want to talk about monsters? What about the Opposition Faction? Before the Unification, they wanted to sign the ‘Open Skies’ treaty. They wanted to let the Xenos in. They would have sold our genetic code to the highest bidder!”[span_161](end_span) “That was twenty cycles ago!” Elara pleaded. [span_162](start_span)“And the Opposition was dissolved! We are talking about now. We are talking about the man who signs your paycheck.”[span_162](end_span) “It’s the same war!” Joren insisted. [span_163](start_span)He was accessing a pre-packaged argument from the Weave now;[span_163](end_span) [span_164](start_span)Elara could hear the shift in his cadence, the robotic rhythm of a downloaded script.[span_164](end_span)</p>
+            <p>“That’s not logic, Joren. That’s a subroutine.”</p>
+            
+            <p>“It is survival!” Joren stood up, his exo-skeleton whirring to life. “You think you’re brave, El? You’re just arrogant. You think because you found some dusty old files, you know better than the Collective? The Anchor said Valerius called Kaelen ‘two-faced’ in a later log. Doesn’t that prove Kaelen was playing him?”</p>
 
-            [span_165](start_span)<p>“The enemies of Aethelgard use ‘truth’ as a weapon to weaken our resolve. If we doubt Kaelen, the Shield flickers. If the Shield flickers, we die. Therefore, doubt is death.”[span_165](end_span) [span_166](start_span)“That’s not logic, Joren. That’s a subroutine.”[span_166](end_span) “It is survival!” [span_167](start_span)Joren stood up, his exo-skeleton whirring to life.[span_167](end_span) [span_168](start_span)“You think you’re brave, El? You’re just arrogant. You think because you found some dusty old files, you know better than the Collective? The Anchor said Valerius called Kaelen ‘two-faced’ in a later log. Doesn’t that prove Kaelen was playing him?”[span_168](end_span)</p>
+            <p>“No!” Elara stood up too. “It proves Kaelen promised him things he didn’t deliver! It proves they were partners until the deal went sour! Being a liar doesn’t make Kaelen a hero; it just makes him a liar!”</p>
+            
+            <p>Joren stared at her. For a second, the amber light on his temple flickered. He looked at her—really looked at her—with the eyes of the brother who used to sneak her extra ration bars. He looked tired. He looked like a man who was holding up the weight of the sky and was terrified that if he shifted his grip even an inch, it would crush him.</p>
 
-            <p>“No!” Elara stood up too. [span_169](start_span)“It proves Kaelen promised him things he didn’t deliver! It proves they were partners until the deal went sour! Being a liar doesn’t make Kaelen a hero; it just makes him a liar!”[span_169](end_span) Joren stared at her. [span_170](start_span)For a second, the amber light on his temple flickered.[span_170](end_span) [span_171](start_span)He looked at her—really looked at her—with the eyes of the brother who used to sneak her extra ration bars.[span_171](end_span) He looked tired. [span_172](start_span)He looked like a man who was holding up the weight of the sky and was terrified that if he shifted his grip even an inch, it would crush him.[span_172](end_span)</p>
+            <p>“I can’t,” he whispered. “If he is… if he is what you say… then everything I’ve done—the raids, the purges, the loyalty oaths—it was all for nothing. I can’t be a monster’s tool, El. So he must be a hero. He has to be.”</p>
+            
+            <p>The tragedy hung in the air, heavy and suffocating. He wasn’t defending Kaelen. He was defending his own soul. To admit Kaelen’s guilt was to admit his own complicity.</p>
+            
+            <p>The Weave surged. The light on Joren’s temple turned a hard, unblinking green. [SYNC RESTORED]. His face went slack, then hardened into a mask of indifference.</p>
+            
+            <p>“Citizen,” Joren said, his voice cold and unfamiliar. “You are distributing Class-A contraband. You have ten seconds to clear the sector before I alert the patrol drones.”</p>
+            
+            <p>“Joren…”</p>
+            
+            <p>“Seven seconds. The Parallax is corrected. The truth is what the Shield requires it to be.”</p>
 
-            <p>“I can’t,” he whispered. [span_173](start_span)“If he is… if he is what you say… then everything I’ve done—the raids, the purges, the loyalty oaths—it was all for nothing. I can’t be a monster’s tool, El. So he must be a hero. He has to be.”[span_173](end_span) The tragedy hung in the air, heavy and suffocating. He wasn’t defending Kaelen. [span_174](start_span)He was defending his own soul.[span_174](end_span) [span_175](start_span)To admit Kaelen’s guilt was to admit his own complicity.[span_175](end_span) [span_176](start_span)The Weave surged.[span_176](end_span)</p>
-
-            <p>The light on Joren’s temple turned a hard, unblinking green. [span_177](start_span)[SYNC RESTORED].[span_177](end_span) [span_178](start_span)His face went slack, then hardened into a mask of indifference.[span_178](end_span) [span_179](start_span)“Citizen,” Joren said, his voice cold and unfamiliar.[span_179](end_span) [span_180](start_span)“You are distributing Class-A contraband. You have ten seconds to clear the sector before I alert the patrol drones.”[span_180](end_span) [span_181](start_span)“Joren…”[span_181](end_span) [span_182](start_span)“Seven seconds. The Parallax is corrected. The truth is what the Shield requires it to be.”[span_182](end_span)</p>
-
-            <p>Elara looked at him one last time. The brother was gone. [span_183](start_span)There was only Unit 734.[span_183](end_span) [span_184](start_span)She turned and ran.[span_184](end_span) [span_185](start_span)Behind her, she heard Joren sit back down and order another drink, the Weave rewarding him with a hit of synthetic endorphins for successfully rejecting the virus of doubt.[span_185](end_span) [span_186](start_span)He took a sip, smiling a blank, blissful smile as the truth was scrubbed from his mind, leaving only the blinding, comfortable light.[span_186](end_span)</p>
+            <p>Elara looked at him one last time. The brother was gone. There was only Unit 734. She turned and ran. Behind her, she heard Joren sit back down and order another drink, the Weave rewarding him with a hit of synthetic endorphins for successfully rejecting the virus of doubt. He took a sip, smiling a blank, blissful smile as the truth was scrubbed from his mind, leaving only the blinding, comfortable light.</p>
 
             <div class="chapter-title">Part IV: The Holographic Absolution</div>
 
-            [span_187](start_span)<p>The Grand Unification Ceremony began not with a trumpet blast, but with a seismic hum that vibrated through the deck plates of every habitat in the Aethelgard System.[span_187](end_span) [span_188](start_span)Elara crouched in the maintenance crawlspace of a ventilation shaft, peering through a grate.[span_188](end_span) [span_189](start_span)Below her, the Great Plaza of Sector 1 was a sea of bodies.[span_189](end_span) [span_190](start_span)Millions of citizens stood in perfect, grid-like formations, their exo-suits polished to a mirror sheen.[span_190](end_span) [span_191](start_span)Above them, the holographic sky had been scrubbed of all advertisements and weather data.[span_191](end_span) [span_192](start_span)It was now a single, uninterrupted field of gold—the color of the Synarchy.[span_192](end_span)</p>
+            <p>The Grand Unification Ceremony began not with a trumpet blast, but with a seismic hum that vibrated through the deck plates of every habitat in the Aethelgard System. Elara crouched in the maintenance crawlspace of a ventilation shaft, peering through a grate.</p>
+            
+            <p>Below her, the Great Plaza of Sector 1 was a sea of bodies. Millions of citizens stood in perfect, grid-like formations, their exo-suits polished to a mirror sheen. Above them, the holographic sky had been scrubbed of all advertisements and weather data. It was now a single, uninterrupted field of gold—the color of the Synarchy.</p>
 
-            [span_193](start_span)<p>“Initiating Neural Synchronization,” the public address system intoned.[span_193](end_span) [span_194](start_span)Elara felt the phantom itch in her brain, the ghost of the connection she didn’t have.[span_194](end_span) Below, the crowd moved as one. Millions of heads tilted up. [span_195](start_span)Millions of eyes diluted with the same programmed awe.[span_195](end_span) [span_196](start_span)Then, He appeared.[span_196](end_span) [span_197](start_span)High Archon Kaelen didn’t just walk onto a stage; he manifested.[span_197](end_span)</p>
+            <p>“Initiating Neural Synchronization,” the public address system intoned.</p>
+            
+            <p>Elara felt the phantom itch in her brain, the ghost of the connection she didn’t have. Below, the crowd moved as one. Millions of heads tilted up. Millions of eyes diluted with the same programmed awe.</p>
+            
+            <p>Then, He appeared. High Archon Kaelen didn’t just walk onto a stage; he manifested. A colossal projection of him, ten kilometers high, shimmered into existence in the center of the Dyson Swarm. He was larger than the sun he eclipsed.</p>
 
-            <div class="story-image"></div>
+            <p>“My children,” Kaelen’s voice wasn’t just heard; it was felt. The Weave transmitted the sensation of a warm hand on a shoulder, a father’s reassuring grip. “Today, the enemy sought to blind you with dust from the past. They sought to use the words of a dead monster to silence the living.”</p>
+            
+            <p>Elara gripped the grate until her knuckles turned white. Here it comes, she thought. The denial. The fake evidence. But Kaelen didn’t deny. He smiled—a sad, burdened smile that the high-definition rendering caught in exquisite detail.</p>
 
-            [span_198](start_span)<p>A colossal projection of him, ten kilometers high, shimmered into existence in the center of the Dyson Swarm.[span_198](end_span) [span_199](start_span)He was larger than the sun he eclipsed.[span_199](end_span) [span_200](start_span)“My children,” Kaelen’s voice wasn’t just heard; it was felt.[span_200](end_span) [span_201](start_span)The Weave transmitted the sensation of a warm hand on a shoulder, a father’s reassuring grip.[span_201](end_span) [span_202](start_span)“Today, the enemy sought to blind you with dust from the past. They sought to use the words of a dead monster to silence the living.”[span_202](end_span) Elara gripped the grate until her knuckles turned white. Here it comes, she thought. The denial. [span_203](start_span)The fake evidence.[span_203](end_span) But Kaelen didn’t deny. [span_204](start_span)He smiled—a sad, burdened smile that the high-definition rendering caught in exquisite detail.[span_204](end_span)</p>
+            <p>“They showed you my letters to Valerius,” Kaelen continued, his voice dropping to a conspiratorial whisper that echoed across the vacuum. “They showed you that I walked in the gardens of Station Azure. They showed you that I broke bread with the Corruptor.”</p>
+            
+            <p>A ripple of unease moved through the crowd, quickly smoothed over by the Weave’s dampening algorithms.</p>
+            
+            <p>“Do you know why I went?” Kaelen roared, his image flaring with sudden intensity. “Do you think I went for the pleasures of the flesh? Do you think your Archon, who has fasted for forty cycles to purify the Shield, sought the touch of a clone?”</p>
 
-            [span_205](start_span)<p>“They showed you my letters to Valerius,” Kaelen continued, his voice dropping to a conspiratorial whisper that echoed across the vacuum.[span_205](end_span) [span_206](start_span)“They showed you that I walked in the gardens of Station Azure. They showed you that I broke bread with the Corruptor.”[span_206](end_span) [span_207](start_span)A ripple of unease moved through the crowd, quickly smoothed over by the Weave’s dampening algorithms.[span_207](end_span) “Do you know why I went?” [span_208](start_span)Kaelen roared, his image flaring with sudden intensity.[span_208](end_span) [span_209](start_span)“Do you think I went for the pleasures of the flesh? Do you think your Archon, who has fasted for forty cycles to purify the Shield, sought the touch of a clone?”[span_209](end_span)</p>
+            <p>He paused. The silence was absolute. “I went,” he said softly, “because to kill a beast, you must first look it in the eye. I went to Station Azure to map its rot. I flattered Valerius. I praised his ‘taste’ in sin. I smiled at his abominations. And do you know how much it cost me?”</p>
+            
+            <p>The giant hologram touched its own chest. “It burned my soul. Every moment I spent in that ‘paradise’ was a torture you cannot imagine. But I did it. I let the filth touch me so that I could learn how to scrub it from you.”</p>
 
-            <p>He paused. [span_210](start_span)The silence was absolute.[span_210](end_span) [span_211](start_span)“I went,” he said softly, “because to kill a beast, you must first look it in the eye. I went to Station Azure to map its rot. I flattered Valerius. I praised his ‘taste’ in sin. I smiled at his abominations. And do you know how much it cost me?”[span_211](end_span) [span_212](start_span)The giant hologram touched its own chest.[span_212](end_span) [span_213](start_span)“It burned my soul. Every moment I spent in that ‘paradise’ was a torture you cannot imagine. But I did it. I let the filth touch me so that I could learn how to scrub it from you.”[span_213](end_span)</p>
+            <p>Below, Elara watched in horror as the narrative took hold. It was masterful. He wasn’t a hypocrite; he was a martyr. He hadn’t sinned; he had sacrificed his own spiritual cleanliness for the greater good.</p>
+            
+            <p>“The enemy calls me ‘two-faced’!” Kaelen laughed, a sound like cracking thunder. “Yes! I wear two faces! One face I show to the darkness, to deceive it, to learn its secrets. And this face…” The hologram leaned closer, filling the sky. “This face I keep for you. The face of the Shield.”</p>
 
-            <p>Below, Elara watched in horror as the narrative took hold. It was masterful. [span_214](start_span)He wasn’t a hypocrite;[span_214](end_span) he was a martyr. [span_215](start_span)He hadn’t sinned; he had sacrificed his own spiritual cleanliness for the greater good.[span_215](end_span) “The enemy calls me ‘two-faced’!” [span_216](start_span)Kaelen laughed, a sound like cracking thunder.[span_216](end_span) [span_217](start_span)“Yes! I wear two faces! One face I show to the darkness, to deceive it, to learn its secrets. And this face…” The hologram leaned closer, filling the sky.[span_217](end_span) [span_218](start_span)“This face I keep for you. The face of the Shield.”[span_218](end_span)</p>
+            <p>The Weave surged. Elara could see it happen—the physical reaction of the crowd. A collective shudder of ecstasy. The feedback loop of validation was so strong that people were weeping. They fell to their knees, not in submission, but in gratitude.</p>
+            
+            <p>“He suffered for us,” a woman near the ventilation shaft sobbed, clutching her chest. “He walked through hell so we could walk in the light.”</p>
+            
+            <p>Elara slumped against the cold metal of the shaft. The data shard in her pocket felt heavy, useless. Facts were brittle things. They shattered against the reinforced concrete of faith. She had brought them a mathematical proof of corruption, and Kaelen had turned it into a parable of sainthood.</p>
 
-            [span_219](start_span)<p>The Weave surged.[span_219](end_span) Elara could see it happen—the physical reaction of the crowd. [span_220](start_span)A collective shudder of ecstasy.[span_220](end_span) [span_221](start_span)The feedback loop of validation was so strong that people were weeping.[span_221](end_span) [span_222](start_span)They fell to their knees, not in submission, but in gratitude.[span_222](end_span) [span_223](start_span)“He suffered for us,” a woman near the ventilation shaft sobbed, clutching her chest.[span_223](end_span) [span_224](start_span)“He walked through hell so we could walk in the light.”[span_224](end_span) [span_225](start_span)Elara slumped against the cold metal of the shaft.[span_225](end_span)</p>
+            <p>“And now,” Kaelen’s voice hardened. “Because the enemy has shown their hand… because they have tried to use my sacrifice as a weapon… we must tighten the grip. The outer membranes of the Shield are too porous. The data-streams are too wild.” He raised a hand, and the golden sky turned a deep, bruised purple. “Effective immediately, I am initiating the Total Recall Protocol. All archival data from the Pre-Unification Era is hereby classified as ‘Psych-Hazard.’ To possess it is to invite the enemy into your mind. To share it is an act of spiritual treason.”</p>
 
-            <p>The data shard in her pocket felt heavy, useless. [span_226](start_span)Facts were brittle things.[span_226](end_span) They shattered against the reinforced concrete of faith. [span_227](start_span)She had brought them a mathematical proof of corruption, and Kaelen had turned it into a parable of sainthood.[span_227](end_span) “And now,” Kaelen’s voice hardened. [span_228](start_span)“Because the enemy has shown their hand… because they have tried to use my sacrifice as a weapon… we must tighten the grip. The outer membranes of the Shield are too porous. The data-streams are too wild.”[span_228](end_span) [span_229](start_span)He raised a hand, and the golden sky turned a deep, bruised purple.[span_229](end_span) [span_230](start_span)“Effective immediately, I am initiating the Total Recall Protocol. All archival data from the Pre-Unification Era is hereby classified as ‘Psych-Hazard.’ To possess it is to invite the enemy into your mind. To share it is an act of spiritual treason.”[span_230](end_span)</p>
-
-            <p>The crowd cheered. They cheered for their own blinding. [span_231](start_span)They cheered for the erasure of the history that Elara had risked her life to save.[span_231](end_span) “Let the past die,” Kaelen commanded. [span_232](start_span)“Let the dust settle. Look only to the sun.”[span_232](end_span) [span_233](start_span)The hologram dissolved into a burst of blinding white light, indistinguishable from the artificial star behind it.[span_233](end_span) [span_234](start_span)The glare washed out everything—the dirt, the shadows, the truth.[span_234](end_span) [span_235](start_span)Elara closed her eyes, but the light was so bright it pierced her eyelids.[span_235](end_span) [span_236](start_span)She was alone in the dark, while a billion people celebrated in the light that burned everything clean.[span_236](end_span) “You win,” she whispered to the empty shaft. [span_237](start_span)“You win.”[span_237](end_span)</p>
+            <p>The crowd cheered. They cheered for their own blinding. They cheered for the erasure of the history that Elara had risked her life to save.</p>
+            
+            <p>“Let the past die,” Kaelen commanded. “Let the dust settle. Look only to the sun.”</p>
+            
+            <p>The hologram dissolved into a burst of blinding white light, indistinguishable from the artificial star behind it. The glare washed out everything—the dirt, the shadows, the truth. Elara closed her eyes, but the light was so bright it pierced her eyelids. She was alone in the dark, while a billion people celebrated in the light that burned everything clean.</p>
+            
+            <p>“You win,” she whispered to the empty shaft. “You win.”</p>
 
             <div class="chapter-title">Part V: The Memory Hole</div>
 
-            [span_238](start_span)<p>The “Total Recall Protocol” was not a violent event.[span_238](end_span) There were no screams, no breaking of doors, no marching boots. [span_239](start_span)It was a soft, silent update.[span_239](end_span) [span_240](start_span)From her vantage point in the ventilation shaft, Elara watched the “Great Scrubbing” happen in real-time.[span_240](end_span) [span_241](start_span)Below in the plaza, the millions of citizens stood frozen, their eyes rolling back as their neural laces synced with the central servers.[span_241](end_span) [span_242](start_span)A low, harmonic chime echoed across the sector—the sound of a system reboot.[span_242](end_span) When their eyes focused again, the confusion was gone. [span_243](start_span)The hesitation was gone.[span_243](end_span) [span_244](start_span)The memory of the leak—the emails, the “exotic island,” the “two-faced” hypocrisy—had been tagged as Corrupted Data.[span_244](end_span) [span_245](start_span)It wasn’t just deleted; it was overwritten with the new narrative: Kaelen the Martyr.[span_245](end_span) [span_246](start_span)Kaelen the Shield-Bearer who walked into the fire.[span_246](end_span)</p>
+            <p>The “Total Recall Protocol” was not a violent event. There were no screams, no breaking of doors, no marching boots. It was a soft, silent update. From her vantage point in the ventilation shaft, Elara watched the “Great Scrubbing” happen in real-time. Below in the plaza, the millions of citizens stood frozen, their eyes rolling back as their neural laces synced with the central servers. A low, harmonic chime echoed across the sector—the sound of a system reboot.</p>
+            
+            <p>When their eyes focused again, the confusion was gone. The hesitation was gone. The memory of the leak—the emails, the “exotic island,” the “two-faced” hypocrisy—had been tagged as Corrupted Data. It wasn’t just deleted; it was overwritten with the new narrative: Kaelen the Martyr. Kaelen the Shield-Bearer who walked into the fire.</p>
 
-            [span_247](start_span)<p>Elara felt a vibration in her pocket.[span_247](end_span) [span_248](start_span)Her data deck, isolated from the Weave, was the only thing in the sector that still remembered the last hour.[span_248](end_span) She looked at the small screen. [span_249](start_span)The “Dead Drop” site she had used to upload the files was now displaying a single, blinking message: 404 – RESOURCE NOT FOUND.[span_249](end_span) The history she had risked her life to reveal had lasted exactly forty-two minutes. [span_250](start_span)Now, it was dust.[span_250](end_span) She didn’t run. There was no point. [span_251](start_span)The drones were already sweeping the upper levels, their sensors tuned to the bio-signature of “Unsynchronized Elements.”[span_251](end_span)</p>
+            <p>Elara felt a vibration in her pocket. Her data deck, isolated from the Weave, was the only thing in the sector that still remembered the last hour. She looked at the small screen. The “Dead Drop” site she had used to upload the files was now displaying a single, blinking message: 404 – RESOURCE NOT FOUND. The history she had risked her life to reveal had lasted exactly forty-two minutes. Now, it was dust.</p>
+            
+            <p>She didn’t run. There was no point. The drones were already sweeping the upper levels, their sensors tuned to the bio-signature of “Unsynchronized Elements.” She dropped her deck—her lifeline, her weapon—down the dark throat of the ventilation shaft. It clattered against the metal sides, falling into the recycling incinerators miles below.</p>
+            
+            <p>She stripped off her identifying jacket, the one with the “Data Dredger” patch. She smeared grease from the shaft walls onto her face, masking her features. She would go down to the Sump, the lowest ring of the habitat where the air scrubbers didn’t work and the Weave signal was too weak to penetrate the lead shielding. She would become a “Null”—a ghost in the machine, existing only in the blind spots of the surveillance grid. She was not a revolutionary anymore. She was just a backup drive for a file format that was no longer supported.</p>
 
-            [span_252](start_span)<p>She dropped her deck—her lifeline, her weapon—down the dark throat of the ventilation shaft.[span_252](end_span) [span_253](start_span)It clattered against the metal sides, falling into the recycling incinerators miles below.[span_253](end_span) [span_254](start_span)She stripped off her identifying jacket, the one with the “Data Dredger” patch.[span_254](end_span) [span_255](start_span)She smeared grease from the shaft walls onto her face, masking her features.[span_255](end_span) [span_256](start_span)She would go down to the Sump, the lowest ring of the habitat where the air scrubbers didn’t work and the Weave signal was too weak to penetrate the lead shielding.[span_256](end_span) [span_257](start_span)She would become a “Null”—a ghost in the machine, existing only in the blind spots of the surveillance grid.[span_257](end_span) She was not a revolutionary anymore. [span_258](start_span)She was just a backup drive for a file format that was no longer supported.[span_258](end_span)</p>
+            <p>High above the clouds, in the apex of the Command Spire, the air was scented with synthesized jasmine and ozone. High Archon Kaelen stood by the viewport, looking out at the Dyson Swarm. The panels of the sphere glittered like diamonds, harnessing the power of the star to keep the Aethelgard System alive—and contained.</p>
+            
+            <p>“Protocol completion at 100%,” a cool, disembodied voice announced. “Social cohesion restored to optimal levels.”</p>
+            
+            <p>Kaelen nodded, turning away from the view. He walked to his desk, a slab of obsidian that seemed to absorb the light. He placed his hand on the surface. A biometric scanner read his palm, his pulse, and the specific electrical resistance of his nervous system. A hidden partition in the wall slid open. Inside was not a weapon, or a vault of gold, but a single, isolated server terminal. It was old tech, air-gapped from the rest of the Synarchy’s network.</p>
 
-            [span_259](start_span)<p>High above the clouds, in the apex of the Command Spire, the air was scented with synthesized jasmine and ozone.[span_259](end_span) [span_260](start_span)High Archon Kaelen stood by the viewport, looking out at the Dyson Swarm.[span_260](end_span) [span_261](start_span)The panels of the sphere glittered like diamonds, harnessing the power of the star to keep the Aethelgard System alive—and contained.[span_261](end_span) “Protocol completion at 100%,” a cool, disembodied voice announced. [span_262](start_span)“Social cohesion restored to optimal levels.”[span_262](end_span) Kaelen nodded, turning away from the view. [span_263](start_span)He walked to his desk, a slab of obsidian that seemed to absorb the light.[span_263](end_span) He placed his hand on the surface. [span_264](start_span)A biometric scanner read his palm, his pulse, and the specific electrical resistance of his nervous system.[span_264](end_span) A hidden partition in the wall slid open. [span_265](start_span)Inside was not a weapon, or a vault of gold, but a single, isolated server terminal.[span_265](end_span) [span_266](start_span)It was old tech, air-gapped from the rest of the Synarchy’s network.[span_266](end_span)</p>
+            <p>Kaelen typed a command. RUN SIMULATION: V-9</p>
+            
+            <p>The holographic emitter on the desk flickered. A figure materialized—sitting casually on the edge of the desk, swirling a glass of digital wine. It was Valerius 9. Or rather, a high-fidelity cognitive construct of him, preserved before his execution.</p>
+            
+            <p>“Quite a show, Kaelen,” the construct said, its voice dripping with the same arrogant charm the real man had possessed. “I watched the feed. ‘The Martyr of Station Azure’? Really? That’s a bit rich, even for you.”</p>
+            
+            <p>Kaelen poured himself a drink of real water. “It worked, didn’t it?”</p>
 
-            [span_267](start_span)<p>Kaelen typed a command.[span_267](end_span) [span_268](start_span)RUN SIMULATION: V-9[span_268](end_span) The holographic emitter on the desk flickered. [span_269](start_span)A figure materialized—sitting casually on the edge of the desk, swirling a glass of digital wine.[span_269](end_span) [span_270](start_span)It was Valerius 9. Or rather, a high-fidelity cognitive construct of him, preserved before his execution.[span_270](end_span) [span_271](start_span)“Quite a show, Kaelen,” the construct said, its voice dripping with the same arrogant charm the real man had possessed.[span_271](end_span) [span_272](start_span)“I watched the feed. ‘The Martyr of Station Azure’? Really? That’s a bit rich, even for you.”[span_272](end_span) Kaelen poured himself a drink of real water. [span_273](start_span)“It worked, didn’t it?”[span_273](end_span)</p>
+            <p>“Oh, it worked beautifully,” the Valerius-AI chuckled. “You took the evidence of your own corruption and turned it into a scripture of your holiness. You didn’t just hide the stain; you made them worship it.”</p>
+            
+            <p>“They need to worship something,” Kaelen said, sitting down heavily. “If they don’t worship the Shield, they’ll stare at the void. And the void makes them panic.”</p>
+            
+            <p>“And the ‘two-faced’ comment?” the construct teased. “That was a nice touch. Taking my insult and wearing it as a badge of honor.”</p>
 
-            [span_274](start_span)<p>“Oh, it worked beautifully,” the Valerius-AI chuckled.[span_274](end_span) [span_275](start_span)“You took the evidence of your own corruption and turned it into a scripture of your holiness. You didn’t just hide the stain; you made them worship it.”[span_275](end_span) [span_276](start_span)“They need to worship something,” Kaelen said, sitting down heavily.[span_276](end_span) [span_277](start_span)“If they don’t worship the Shield, they’ll stare at the void. And the void makes them panic.”[span_277](end_span) “And the ‘two-faced’ comment?” the construct teased. [span_278](start_span)“That was a nice touch. Taking my insult and wearing it as a badge of honor.”[span_278](end_span)</p>
+            <p>“Strategy, Valerius. Adaptability.” Kaelen took a sip of water. “You were always too rigid. You thought pleasure was the ultimate power. You were wrong. The ultimate power is context. I can do anything—visit your island, trade in flesh, break every law I wrote—as long as I control the context in which it is viewed.”</p>
+            
+            <p>“So, what now?” the construct asked. “You’ve erased the past. You’ve blinded the present. What’s left?”</p>
+            
+            <p>Kaelen looked at the digital ghost of his old friend. “Now? Now I have absolute mandate. I can tighten the blockade. I can expand the surveillance. And if anyone asks why, I will tell them it is to prevent another ‘Data-Terrorist’ attack.”</p>
 
-            <p>“Strategy, Valerius. Adaptability.” Kaelen took a sip of water. [span_279](start_span)“You were always too rigid. You thought pleasure was the ultimate power. You were wrong. The ultimate power is context. I can do anything—visit your island, trade in flesh, break every law I wrote—as long as I control the context in which it is viewed.”[span_279](end_span) “So, what now?” the construct asked. [span_280](start_span)“You’ve erased the past. You’ve blinded the present. What’s left?”[span_280](end_span) [span_281](start_span)Kaelen looked at the digital ghost of his old friend.[span_281](end_span) [span_282](start_span)“Now? Now I have absolute mandate. I can tighten the blockade. I can expand the surveillance. And if anyone asks why, I will tell them it is to prevent another ‘Data-Terrorist’ attack.”[span_282](end_span)</p>
+            <p>“You’re a monster, Kaelen,” the construct said, raising its glass in a toast. “But you’re a successful monster. And in this system, that’s the only kind of hero there is.”</p>
+            
+            <p>Kaelen tapped the desk. “End simulation.” The hologram vanished. The room was empty again. Kaelen sat in the silence, the ruler of a world that had happily traded its memory for his protection. He felt no guilt. Guilt, like truth, was just data. And data could be deleted.</p>
 
-            [span_283](start_span)<p>“You’re a monster, Kaelen,” the construct said, raising its glass in a toast.[span_283](end_span) [span_284](start_span)“But you’re a successful monster. And in this system, that’s the only kind of hero there is.”[span_284](end_span) Kaelen tapped the desk. [span_285](start_span)“End simulation.”[span_285](end_span) The hologram vanished. [span_286](start_span)The room was empty again.[span_286](end_span) [span_287](start_span)Kaelen sat in the silence, the ruler of a world that had happily traded its memory for his protection.[span_287](end_span) He felt no guilt. Guilt, like truth, was just data. [span_288](start_span)And data could be deleted.[span_288](end_span)</p>
+            <p>Cycle 45, Post-Unification. Unit 734—formerly Joren—sat in his welding pod, drifting along the outer hull of the habitat. The stars were bright and cold behind his visor. His neural lace was humming with a soothing beta-wave broadcast, a constant, subconscious reminder that he was safe, loved, and purposeful. A notification pinged on his heads-up display.</p>
 
-            [span_289](start_span)<p>Cycle 45, Post-Unification.[span_289](end_span) [span_290](start_span)Unit 734—formerly Joren—sat in his welding pod, drifting along the outer hull of the habitat.[span_290](end_span) [span_291](start_span)The stars were bright and cold behind his visor.[span_291](end_span) [span_292](start_span)His neural lace was humming with a soothing beta-wave broadcast, a constant, subconscious reminder that he was safe, loved, and purposeful.[span_292](end_span) [span_293](start_span)A notification pinged on his heads-up display.[span_293](end_span)</p>
+<div class="data-log">ANOMALY DETECTED. SECTOR 7-G. DATA FRAGMENT.</div>
 
-            <div class="data-log">ANOMALY DETECTED. SECTOR 7-G. [span_294](start_span)DATA FRAGMENT.[span_294](end_span)</div>
+            <p>It was a piece of debris, floating near the intake valve. A fragment of a smashed data deck. As Joren’s welder arm reached out to vaporize it, his localized scanner picked up a ghost of a file header. Subject: The Pitch. Sender: Archon_K… For a microsecond—less than a heartbeat—a synapse fired in Joren’s brain. A memory of a girl with dirt on her face. A memory of a bar smelling of stale ale. A memory of doubt. Elara. The name floated up from the deep subconscious. His heart rate spiked. The amber light on his temple flickered.</p>
 
-            <p>It was a piece of debris, floating near the intake valve. [span_295](start_span)A fragment of a smashed data deck.[span_295](end_span) [span_296](start_span)As Joren’s welder arm reached out to vaporize it, his localized scanner picked up a ghost of a file header.[span_296](end_span) Subject: The Pitch. [span_297](start_span)Sender: Archon_K…[span_297](end_span) [span_298](start_span)For a microsecond—less than a heartbeat—a synapse fired in Joren’s brain.[span_298](end_span) A memory of a girl with dirt on her face. [span_299](start_span)A memory of a bar smelling of stale ale.[span_299](end_span) [span_300](start_span)A memory of doubt.[span_300](end_span) [span_301](start_span)Elara.[span_301](end_span) The name floated up from the deep subconscious. [span_302](start_span)His heart rate spiked.[span_302](end_span) [span_303](start_span)The amber light on his temple flickered.[span_303](end_span)</p>
+            <p>Immediately, the Weave responded.</p>
 
-            [span_304](start_span)<p>Immediately, the Weave responded.[span_304](end_span)</p>
+<div class="data-log">[STRESS DETECTED.
+INITIATING CALMING PROTOCOL.]
+[QUERY: DOES THIS DATA ALIGN WITH THE SHIELD?]
+[ANSWER: NEGATIVE.]</div>
 
-            [span_305](start_span)<div class="data-log">[STRESS DETECTED.[span_305](end_span)
-[span_306](start_span)INITIATING CALMING PROTOCOL.][span_306](end_span)
-[span_307](start_span)[QUERY: DOES THIS DATA ALIGN WITH THE SHIELD?][span_307](end_span)
-[span_308](start_span)[ANSWER: NEGATIVE.][span_308](end_span)</div>
-
-            <p>Joren blinked. [span_309](start_span)The chemical dampeners flooded his system.[span_309](end_span) The face of the girl dissolved into static. [span_310](start_span)The doubt smoothed over like ripples in a pond freezing into ice.[span_310](end_span) [span_311](start_span)“Trash,” Joren muttered.[span_311](end_span) He triggered the welder. [span_312](start_span)A beam of white-hot plasma shot out, incinerating the debris instantly.[span_312](end_span) [span_313](start_span)The data fragment turned to ash, and the ash was scattered by the solar wind, lost forever in the blinding glare of the artificial sun.[span_313](end_span) Joren checked his vitals. Green across the board. [span_314](start_span)He smiled, the vacant, beatific smile of the saved.[span_314](end_span) [span_315](start_span)“For the Shield,” he whispered.[span_315](end_span) [span_316](start_span)He turned back to his work, welding the bars of the cage a little tighter, ensuring that nothing from the outside could ever get in, and nothing from the inside—not even the truth—could ever get out.[span_316](end_span)</p>
+            <p>Joren blinked. The chemical dampeners flooded his system. The face of the girl dissolved into static. The doubt smoothed over like ripples in a pond freezing into ice. “Trash,” Joren muttered. He triggered the welder. A beam of white-hot plasma shot out, incinerating the debris instantly. The data fragment turned to ash, and the ash was scattered by the solar wind, lost forever in the blinding glare of the artificial sun.</p>
+            
+            <p>Joren checked his vitals. Green across the board. He smiled, the vacant, beatific smile of the saved. “For the Shield,” he whispered. He turned back to his work, welding the bars of the cage a little tighter, ensuring that nothing from the outside could ever get in, and nothing from the inside—not even the truth—could ever get out.</p>
 
             <br>
             <p style="text-align: right; font-style: italic;">- JO</p>
