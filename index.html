@@ -11,14 +11,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- CSS VARIABLES (Forced Light Theme) --- */
+        /* --- CSS VARIABLES (Colorful Literary Theme) --- */
         :root {
-            --bg-color: #faf9f7;
-            --surface-color: #ffffff;
-            --text-main: #1a1a1a;
-            --text-muted: #666666;
-            --accent-color: #8b2635;
-            --border-color: #e5e5e5;
+            --bg-color: #f7f5f0; /* Warmer, softer parchment background */
+            --surface-color: #ffffff; /* Crisp white for cards */
+            --heading-color: #1a365d; /* Deep Navy for Main Headings */
+            --subheading-color: #2d3748; /* Dark slate for article titles */
+            --text-main: #4a5568; /* Softer dark grey for body text */
+            --text-muted: #718096;
+            --accent-color: #9b2c2c; /* Rich Crimson */
+            --accent-light: #fff5f5; /* Light crimson for tag backgrounds */
+            --border-color: #e2e8f0;
+            --spotify-green: #1DB954;
+            
             --font-serif: 'Playfair Display', Georgia, serif;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         }
@@ -26,9 +31,7 @@
         /* --- GLOBAL RESETS --- */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
-        html { 
-            scroll-behavior: smooth; /* Enables smooth scrolling for the menu links */
-        }
+        html { scroll-behavior: smooth; }
         
         body { 
             background-color: var(--bg-color) !important; 
@@ -38,15 +41,15 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        a { text-decoration: none; color: inherit; transition: color 0.2s ease; }
+        a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
 
-        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        .container { max-width: 850px; margin: 0 auto; padding: 0 24px; }
 
         /* --- HEADER & NAVIGATION --- */
         .site-header {
-            padding: 50px 0 30px;
+            padding: 60px 0 40px;
             text-align: center;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 2px dashed var(--border-color);
             margin-bottom: 50px;
         }
         
@@ -55,41 +58,37 @@
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: var(--text-muted);
+            color: var(--accent-color);
             margin-bottom: 20px;
-            font-weight: 500;
+            font-weight: 600;
+            background: var(--accent-light);
+            padding: 5px 15px;
+            border-radius: 20px;
         }
         
-        .main-site-link:hover { color: var(--accent-color); }
+        .main-site-link:hover { background: var(--accent-color); color: white; }
         
         .site-title {
             font-family: var(--font-serif) !important;
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 700;
             letter-spacing: -0.5px;
             margin-bottom: 10px;
-            color: var(--text-main) !important;
+            color: var(--heading-color) !important;
         }
         
-        .site-subtitle {
-            font-family: var(--font-serif) !important;
-            font-style: italic;
-            color: var(--text-muted) !important;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-
         /* Navigation Menu */
         .category-nav {
             display: flex;
             justify-content: center;
             gap: 25px;
             flex-wrap: wrap;
+            margin-top: 30px;
         }
         
         .category-nav a {
             font-family: var(--font-sans) !important;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -99,62 +98,77 @@
         }
         
         .category-nav a:hover {
-            color: var(--text-main);
+            color: var(--heading-color);
             border-bottom: 2px solid var(--accent-color);
         }
 
         /* --- CATEGORY SECTIONS --- */
         .category-section {
-            margin-bottom: 60px;
-            padding-top: 20px; /* Space for smooth scroll landing */
+            margin-bottom: 70px;
+            padding-top: 20px;
         }
 
         .section-header {
             font-family: var(--font-serif);
-            font-size: 2rem;
-            color: var(--text-main);
-            border-bottom: 2px solid var(--text-main);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            color: var(--heading-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 8px;
+            margin-bottom: 30px;
+            display: inline-block; /* Makes border only as wide as text */
         }
 
         .empty-state {
             color: var(--text-muted);
             font-style: italic;
             font-family: var(--font-serif);
+            background: var(--surface-color);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px dashed var(--border-color);
         }
 
-        /* --- ARTICLE FEED --- */
+        /* --- ARTICLE FEED (CARD UI) --- */
         .article-card {
-            padding: 30px 0;
-            border-bottom: 1px solid var(--border-color);
+            background: var(--surface-color);
+            padding: 35px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .article-card:last-child { border-bottom: none; }
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: #cbd5e1;
+        }
 
         .article-meta {
             display: flex;
             align-items: center;
             gap: 15px;
             font-size: 0.85rem;
-            font-weight: 500;
+            font-weight: 600;
         }
         
         .article-date { color: var(--text-muted); }
 
         .article-title {
             font-family: var(--font-serif) !important;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             line-height: 1.3;
+            color: var(--subheading-color) !important;
         }
         
         .article-title a:hover { color: var(--accent-color); }
 
         .article-excerpt {
-            color: var(--text-muted);
+            color: var(--text-main);
             font-size: 1.05rem;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -162,25 +176,58 @@
             overflow: hidden;
         }
 
+        /* --- PLAYLIST GRID UI --- */
+        .playlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .playlist-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 600;
+            color: var(--subheading-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .playlist-card i {
+            font-size: 1.8rem;
+            color: var(--spotify-green);
+        }
+
+        .playlist-card:hover {
+            border-color: var(--spotify-green);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(29, 185, 84, 0.1);
+            color: var(--spotify-green);
+        }
+
         /* --- FOOTER --- */
         .site-footer {
             text-align: center;
             padding: 60px 0 40px;
-            margin-top: 40px;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.85rem;
+            margin-top: 60px;
+            border-top: 2px dashed var(--border-color);
+            font-size: 0.9rem;
             color: var(--text-muted);
         }
         
-        .site-footer a { font-weight: 500; text-decoration: underline; text-decoration-color: var(--border-color); text-underline-offset: 4px;}
-        .site-footer a:hover { color: var(--accent-color); text-decoration-color: var(--accent-color); }
+        .site-footer a { font-weight: 600; color: var(--heading-color); }
+        .site-footer a:hover { color: var(--accent-color); }
 
         /* --- MOBILE TWEAKS --- */
         @media (max-width: 600px) {
-            .site-title { font-size: 2.2rem; }
+            .site-title { font-size: 2.5rem; }
             .category-nav { gap: 15px; }
-            .article-title { font-size: 1.5rem; }
-            .section-header { font-size: 1.6rem; }
+            .article-title { font-size: 1.6rem; }
+            .section-header { font-size: 1.8rem; }
+            .article-card { padding: 25px; }
         }
     </style>
 </head>
@@ -207,7 +254,7 @@
             
             <article class="article-card">
                 <div class="article-meta">
-                    <span class="article-date">March 14, 2026</span>
+                    <span class="article-date"><i class="far fa-calendar-alt"></i> March 14, 2026</span>
                 </div>
                 <h3 class="article-title"><a href="posts/parallax-protocol.html">The Parallax Protocol</a></h3>
                 <p class="article-excerpt">The light of the Aethelgard System was not yellow, nor was it the warm, nurturing orange of the primitive hearths described in the Old Archives. It was white—a clinical, bleaching white that scrubbed the shadows from every corner of the habitat ring...</p>
@@ -219,7 +266,7 @@
 
             <article class="article-card">
                 <div class="article-meta">
-                    <span class="article-date">October 13, 2023</span>
+                    <span class="article-date"><i class="far fa-calendar-alt"></i> October 13, 2023</span>
                 </div>
                 <h3 class="article-title"><a href="posts/untimely-winter.html">Untimely Winter</a></h3>
                 <p class="article-excerpt">Ominous shroud descends as snow and dust embrace the wind howls, making the trees naked...</p>
@@ -227,7 +274,7 @@
 
             <article class="article-card">
                 <div class="article-meta">
-                    <span class="article-date">September 30, 2023</span>
+                    <span class="article-date"><i class="far fa-calendar-alt"></i> September 30, 2023</span>
                 </div>
                 <h3 class="article-title"><a href="posts/haunting-melody.html">A Haunting Melody</a></h3>
                 <p class="article-excerpt">Adorned by waning lunar sight droplets dance, weaving light stirring ceaseless eerie charm...</p>
@@ -235,7 +282,7 @@
 
             <article class="article-card">
                 <div class="article-meta">
-                    <span class="article-date">September 18, 2023</span>
+                    <span class="article-date"><i class="far fa-calendar-alt"></i> September 18, 2023</span>
                 </div>
                 <h3 class="article-title"><a href="posts/whispers-in-refrain.html">Whispers in Refrain</a></h3>
                 <p class="article-excerpt">Whispers linger as sparks ignite allure takes flight in a hushed night. Flames kindled as uncertainty lies...</p>
@@ -243,7 +290,7 @@
 
             <article class="article-card">
                 <div class="article-meta">
-                    <span class="article-date">July 25, 2022</span>
+                    <span class="article-date"><i class="far fa-calendar-alt"></i> July 25, 2022</span>
                 </div>
                 <h3 class="article-title"><a href="posts/spectre.html">Spectre</a></h3>
                 <p class="article-excerpt">When I feel breath as labour quenching the angst in drops spectre creeps in as always...</p>
@@ -251,7 +298,7 @@
 
             <article class="article-card">
                 <div class="article-meta">
-                    <span class="article-date">October 08, 2021</span>
+                    <span class="article-date"><i class="far fa-calendar-alt"></i> October 08, 2021</span>
                 </div>
                 <h3 class="article-title"><a href="posts/smiling-radcliffe.html">Smiling Radcliffe</a></h3>
                 <p class="article-excerpt">Sucking the last drop of nectar negating its taste, colour or smell with a slap and kick...</p>
@@ -260,19 +307,46 @@
 
         <section id="non-fiction" class="category-section">
             <h2 class="section-header">Non-Fiction</h2>
-            <p class="empty-state">No entries yet. Check back soon.</p>
+            <p class="empty-state"><i class="fas fa-pen-nib"></i> No entries yet. Check back soon.</p>
         </section>
 
         <section id="playlists" class="category-section">
             <h2 class="section-header">Playlists</h2>
-            <p class="empty-state">No entries yet. Check back soon.</p>
+            
+            <div class="playlist-grid">
+                <a href="https://open.spotify.com/playlist/6Uxbjp9iag9SwZeGgRMF6O?si=nEcNi899SiqDHU-7Sia0JA&pi=dhKbeL4eTNK3J" target="_blank" class="playlist-card">
+                    <i class="fab fa-spotify"></i>
+                    <span>Playlist Vol. 0</span>
+                </a>
+                <a href="https://open.spotify.com/playlist/37i9dQZF1EQn4jwNIohw50?si=utovy78SRwWMxLJChfrjDA" target="_blank" class="playlist-card">
+                    <i class="fab fa-spotify"></i>
+                    <span>Playlist Vol. 1</span>
+                </a>
+                <a href="https://open.spotify.com/playlist/0ziglu9hYHm9y7Nknh3e4c?si=7k593pK0Raa5vmqV_66tGA" target="_blank" class="playlist-card">
+                    <i class="fab fa-spotify"></i>
+                    <span>Playlist Vol. 2</span>
+                </a>
+                <a href="https://open.spotify.com/playlist/25fCBrTDFKvnxTlafW2TOk?si=Phbfbu6KSJGj3rI_TrEE3Q" target="_blank" class="playlist-card">
+                    <i class="fab fa-spotify"></i>
+                    <span>Playlist Vol. 3</span>
+                </a>
+                <a href="https://open.spotify.com/playlist/39iCP5PvxaVE1N5W33HOEc?si=ZCdTbsYDSB69vK--eW_8ag" target="_blank" class="playlist-card">
+                    <i class="fab fa-spotify"></i>
+                    <span>Playlist Vol. 4</span>
+                </a>
+                <a href="https://open.spotify.com/playlist/0DdlGYcQl0i5NSzU5T6vuN?si=9yYC3ItxS4yTM58hc27K0w" target="_blank" class="playlist-card">
+                    <i class="fab fa-spotify"></i>
+                    <span>Playlist Vol. 5</span>
+                </a>
+            </div>
+
         </section>
         
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 Jorlin &middot; <a href="https://jorlin.in">jorlin.in</a></p>
+            <p>© 2026 Jorlin Jose · <a href="https://jorlin.in">jorlin.in</a></p>
         </div>
     </footer>
 
