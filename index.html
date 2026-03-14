@@ -1,163 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shatterOcalm</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shatterOcalm | JO</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        :root {
-            --bg-color: #f4f6f8; /* Slightly darker grey to make cards pop */
-            --card-bg: #ffffff;
-            --text-color: #2c3e50;
-            --accent-color: #2c3e50;
-            --highlight-color: #c0392b;
-            --serif-font: 'Merriweather', serif;
-            --body-font: 'Inter', sans-serif;
-        }
+    <style>
+        :root {
+            --bg-color: #f4f6f8; 
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --accent-color: #2c3e50;
+            --highlight-color: #c0392b;
+            --serif-font: 'Merriweather', serif;
+            --body-font: 'Inter', sans-serif;
+        }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: var(--bg-color); color: var(--text-color); font-family: var(--body-font); line-height: 1.6; }
-        .container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
-        
-        /* HEADER (More Compact) */
-        header { 
-            padding: 30px 0 20px; /* Reduced vertical padding */
-            text-align: center; 
-            margin-bottom: 20px; 
-        }
-        .site-title { 
-            font-family: var(--serif-font); 
-            font-size: 2.2rem; /* Slightly smaller */
-            font-weight: 700; 
-            color: var(--accent-color);
-            margin-bottom: 5px;
-        }
-        .site-subtitle { color: #666; font-style: italic; font-family: var(--serif-font); font-size: 0.95rem; }
-        
-        .nav-back { 
-            display: inline-block; 
-            margin-bottom: 15px; /* Moved above title */
-            font-size: 0.8rem; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            opacity: 0.7;
-        }
-        .nav-back a { text-decoration: none; color: inherit; transition: 0.3s; }
-        .nav-back a:hover { color: var(--highlight-color); opacity: 1; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--bg-color); color: var(--text-color); font-family: var(--body-font); line-height: 1.6; }
+        .container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
+        
+        header { padding: 30px 0 20px; text-align: center; margin-bottom: 20px; }
+        .site-title { font-family: var(--serif-font); font-size: 2.2rem; font-weight: 700; color: var(--accent-color); margin-bottom: 5px; }
+        .site-subtitle { color: #666; font-style: italic; font-family: var(--serif-font); font-size: 0.95rem; }
+        
+        .nav-back { display: inline-block; margin-bottom: 15px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; }
+        .nav-back a { text-decoration: none; color: inherit; transition: 0.3s; }
+        .nav-back a:hover { color: var(--highlight-color); opacity: 1; }
 
-        /* POST CARDS (New Look) */
-        .post-entry { 
-            background: var(--card-bg);
-            padding: 25px 30px;
-            margin-bottom: 25px; 
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow */
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border: 1px solid #eaeaea;
-        }
-        
-        /* Hover Effect for Cards */
-        .post-entry:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            border-color: #ddd;
-        }
+        .post-entry { 
+            background: var(--card-bg);
+            padding: 25px 30px;
+            margin-bottom: 25px; 
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid #eaeaea;
+        }
+        
+        .post-entry:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-color: #ddd; }
 
-        .post-date { 
-            font-size: 0.8rem; 
-            color: #999; 
-            display: block; 
-            margin-bottom: 8px; 
-            font-family: var(--body-font);
-            font-weight: 500;
-        }
-        .post-title { 
-            font-family: var(--serif-font); 
-            font-size: 1.4rem; 
-            margin-bottom: 8px; 
-        }
-        .post-title a { text-decoration: none; color: var(--accent-color); }
-        /* When hovering card, title changes color */
-        .post-entry:hover .post-title a { color: var(--highlight-color); }
-        
-        .post-excerpt { color: #555; font-family: var(--serif-font); font-weight: 300; font-size: 0.95rem; line-height: 1.6; }
-        
-        /* FOOTER (Compact & Color Corrected) */
-        footer { 
-            text-align: center; 
-            padding: 30px 0; /* Reduced padding */
-            color: #999; 
-            font-size: 0.8rem; 
-            margin-top: 30px; 
-        }
-        /* Make the link look exactly like the text */
-        footer a { 
-            color: inherit; /* Inherits the #999 grey */
-            text-decoration: none; 
-            border-bottom: 1px dotted #ccc; /* Subtle underline */
-            transition: 0.3s;
-        }
-        footer a:hover { color: var(--highlight-color); border-bottom-color: var(--highlight-color); }
-        
-        @media (max-width: 600px) { 
-            .site-title { font-size: 1.8rem; } 
-            .post-entry { padding: 20px; }
-        }
-    </style>
+        .post-date { font-size: 0.8rem; color: #999; display: block; margin-bottom: 8px; font-family: var(--body-font); font-weight: 500; }
+        .post-title { font-family: var(--serif-font); font-size: 1.4rem; margin-bottom: 8px; }
+        .post-title a { text-decoration: none; color: var(--accent-color); }
+        .post-entry:hover .post-title a { color: var(--highlight-color); }
+        
+        .post-excerpt { color: #555; font-family: var(--serif-font); font-weight: 300; font-size: 0.95rem; line-height: 1.6; }
+        
+        footer { text-align: center; padding: 30px 0; color: #999; font-size: 0.8rem; margin-top: 30px; }
+        footer a { color: inherit; text-decoration: none; border-bottom: 1px dotted #ccc; transition: 0.3s; }
+        footer a:hover { color: var(--highlight-color); border-bottom-color: var(--highlight-color); }
+        
+        @media (max-width: 600px) { .site-title { font-size: 1.8rem; } .post-entry { padding: 20px; } }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <div class="nav-back"><a href="https://jorlin.in"><i class="fas fa-arrow-left"></i> Home </a></div>
-            <h1 class="site-title">shatterOcalm</h1>
-        </div>
-    </header>
+    <header>
+        <div class="container">
+            <div class="nav-back"><a href="https://jorlin.in"><i class="fas fa-arrow-left"></i> Main Site</a></div>
+            <h1 class="site-title">shatterOcalm</h1>
+            <p class="site-subtitle">Reflections & Poetry by Jorlin Jose</p>
+        </div>
+    </header>
 
-    <div class="container">
-        
-        <div class="post-entry">
-            <span class="post-date">October 13, 2023</span>
-            <h2 class="post-title"><a href="posts/untimely-winter.html">Untimely Winter</a></h2>
-            <p class="post-excerpt">Ominous shroud descends as snow and dust embrace the wind howls, making the trees naked...</p>
-        </div>
+    <div class="container">
+        
+        <div class="post-entry">
+            <span class="post-date">March 14, 2026</span>
+            <h2 class="post-title"><a href="posts/parallax-protocol.html">The Parallax Protocol</a></h2>
+            <p class="post-excerpt">When the boundaries of the digital realm blur with physical reality, a new code must be written to bridge the divergence...</p>
+        </div>
 
-        <div class="post-entry">
-            <span class="post-date">September 30, 2023</span>
-            <h2 class="post-title"><a href="posts/haunting-melody.html">A Haunting Melody</a></h2>
-            <p class="post-excerpt">Adorned by waning lunar sight droplets dance, weaving light stirring ceaseless eerie charm...</p>
-        </div>
+        <div class="post-entry">
+            <span class="post-date">October 13, 2023</span>
+            <h2 class="post-title"><a href="posts/untimely-winter.html">Untimely Winter</a></h2>
+            <p class="post-excerpt">Ominous shroud descends as snow and dust embrace the wind howls, making the trees naked...</p>
+        </div>
 
-        <div class="post-entry">
-            <span class="post-date">September 18, 2023</span>
-            <h2 class="post-title"><a href="posts/whispers-in-refrain.html">Whispers in Refrain</a></h2>
-            <p class="post-excerpt">Whispers linger as sparks ignite allure takes flight in a hushed night. Flames kindled as uncertainty lies...</p>
-        </div>
+        <div class="post-entry">
+            <span class="post-date">September 30, 2023</span>
+            <h2 class="post-title"><a href="posts/haunting-melody.html">A Haunting Melody</a></h2>
+            <p class="post-excerpt">Adorned by waning lunar sight droplets dance, weaving light stirring ceaseless eerie charm...</p>
+        </div>
 
-        <div class="post-entry">
-            <span class="post-date">July 25, 2022</span>
-            <h2 class="post-title"><a href="posts/spectre.html">Spectre</a></h2>
-            <p class="post-excerpt">When I feel breath as labour quenching the angst in drops spectre creeps in as always...</p>
-        </div>
+        <div class="post-entry">
+            <span class="post-date">September 18, 2023</span>
+            <h2 class="post-title"><a href="posts/whispers-in-refrain.html">Whispers in Refrain</a></h2>
+            <p class="post-excerpt">Whispers linger as sparks ignite allure takes flight in a hushed night. Flames kindled as uncertainty lies...</p>
+        </div>
 
-        <div class="post-entry">
-            <span class="post-date">October 08, 2021</span>
-            <h2 class="post-title"><a href="posts/smiling-radcliffe.html">Smiling Radcliffe</a></h2>
-            <p class="post-excerpt">Sucking the last drop of nectar negating its taste, colour or smell with a slap and kick...</p>
-        </div>
-        
-    </div>
+        <div class="post-entry">
+            <span class="post-date">July 25, 2022</span>
+            <h2 class="post-title"><a href="posts/spectre.html">Spectre</a></h2>
+            <p class="post-excerpt">When I feel breath as labour quenching the angst in drops spectre creeps in as always...</p>
+        </div>
 
-    <footer>
-        <p>&copy; 2026 Jorlin<br> <a href="https://jorlin.in">Home</a></p>
-    </footer>
+        <div class="post-entry">
+            <span class="post-date">October 08, 2021</span>
+            <h2 class="post-title"><a href="posts/smiling-radcliffe.html">Smiling Radcliffe</a></h2>
+            <p class="post-excerpt">Sucking the last drop of nectar negating its taste, colour or smell with a slap and kick...</p>
+        </div>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Jorlin Jose <br> <a href="https://jorlin.in">jorlin.in</a></p>
+    </footer>
 
 </body>
 </html>
-
