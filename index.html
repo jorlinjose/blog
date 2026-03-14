@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shatterOcalm | Literary Journal</title>
+    <title>shatterOcalm | Jorlin's Blog</title>
     
-    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-    <link href="[https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap)" rel="stylesheet">
-    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- CSS VARIABLES --- */
+        /* --- CSS VARIABLES (Forced Light Theme) --- */
         :root {
             --bg-color: #faf9f7;
             --surface-color: #ffffff;
@@ -23,20 +23,12 @@
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         }
 
-        /* --- NATIVE DARK MODE --- */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-color: #121212; 
-                --surface-color: #1e1e1e;
-                --text-main: #e0e0e0;
-                --text-muted: #a0a0a0;
-                --accent-color: #d45d6d;
-                --border-color: #333333;
-            }
-        }
-
         /* --- GLOBAL RESETS --- */
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        html { 
+            scroll-behavior: smooth; /* Enables smooth scrolling for the menu links */
+        }
         
         body { 
             background-color: var(--bg-color) !important; 
@@ -111,6 +103,27 @@
             border-bottom: 2px solid var(--accent-color);
         }
 
+        /* --- CATEGORY SECTIONS --- */
+        .category-section {
+            margin-bottom: 60px;
+            padding-top: 20px; /* Space for smooth scroll landing */
+        }
+
+        .section-header {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--text-main);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .empty-state {
+            color: var(--text-muted);
+            font-style: italic;
+            font-family: var(--font-serif);
+        }
+
         /* --- ARTICLE FEED --- */
         .article-card {
             padding: 30px 0;
@@ -128,17 +141,6 @@
             gap: 15px;
             font-size: 0.85rem;
             font-weight: 500;
-        }
-        
-        .article-tag {
-            background-color: var(--surface-color);
-            color: var(--accent-color);
-            padding: 4px 10px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.75rem;
         }
         
         .article-date { color: var(--text-muted); }
@@ -178,6 +180,7 @@
             .site-title { font-size: 2.2rem; }
             .category-nav { gap: 15px; }
             .article-title { font-size: 1.5rem; }
+            .section-header { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -185,80 +188,91 @@
 
     <header class="site-header">
         <div class="container">
-            <a href="[https://jorlin.in](https://jorlin.in)" class="main-site-link"><i class="fas fa-arrow-left" style="margin-right: 5px;"></i> Jorlin.in</a>
+            <a href="https://jorlin.in" class="main-site-link"><i class="fas fa-arrow-left" style="margin-right: 5px;"></i> Jorlin.in</a>
             <h1 class="site-title">shatterOcalm</h1>
-            <p class="site-subtitle">A digital journal of reflections, code, and narrative.</p>
-            
+                        
             <nav class="category-nav">
-                <a href="#">Poetry</a>
-                <a href="#">Fiction</a>
-                <a href="#">Non-Fiction</a>
-                <a href="#">Playlists</a>
+                <a href="#poetry">Poetry</a>
+                <a href="#fiction">Fiction</a>
+                <a href="#non-fiction">Non-Fiction</a>
+                <a href="#playlists">Playlists</a>
             </nav>
         </div>
     </header>
 
     <main class="container">
         
-        <article class="article-card">
-            <div class="article-meta">
-                <span class="article-tag">Fiction</span>
-                <span class="article-date">March 14, 2026</span>
-            </div>
-            <h2 class="article-title"><a href="posts/parallax-protocol.html">The Parallax Protocol</a></h2>
-            <p class="article-excerpt">The light of the Aethelgard System was not yellow, nor was it the warm, nurturing orange of the primitive hearths described in the Old Archives. It was white—a clinical, bleaching white that scrubbed the shadows from every corner of the habitat ring...</p>
-        </article>
+        <section id="fiction" class="category-section">
+            <h2 class="section-header">Fiction</h2>
+            
+            <article class="article-card">
+                <div class="article-meta">
+                    <span class="article-date">March 14, 2026</span>
+                </div>
+                <h3 class="article-title"><a href="posts/parallax-protocol.html">The Parallax Protocol</a></h3>
+                <p class="article-excerpt">The light of the Aethelgard System was not yellow, nor was it the warm, nurturing orange of the primitive hearths described in the Old Archives. It was white—a clinical, bleaching white that scrubbed the shadows from every corner of the habitat ring...</p>
+            </article>
+        </section>
 
-        <article class="article-card">
-            <div class="article-meta">
-                <span class="article-tag">Poetry</span>
-                <span class="article-date">October 13, 2023</span>
-            </div>
-            <h2 class="article-title"><a href="posts/untimely-winter.html">Untimely Winter</a></h2>
-            <p class="article-excerpt">Ominous shroud descends as snow and dust embrace the wind howls, making the trees naked...</p>
-        </article>
+        <section id="poetry" class="category-section">
+            <h2 class="section-header">Poetry</h2>
 
-        <article class="article-card">
-            <div class="article-meta">
-                <span class="article-tag">Poetry</span>
-                <span class="article-date">September 30, 2023</span>
-            </div>
-            <h2 class="article-title"><a href="posts/haunting-melody.html">A Haunting Melody</a></h2>
-            <p class="article-excerpt">Adorned by waning lunar sight droplets dance, weaving light stirring ceaseless eerie charm...</p>
-        </article>
+            <article class="article-card">
+                <div class="article-meta">
+                    <span class="article-date">October 13, 2023</span>
+                </div>
+                <h3 class="article-title"><a href="posts/untimely-winter.html">Untimely Winter</a></h3>
+                <p class="article-excerpt">Ominous shroud descends as snow and dust embrace the wind howls, making the trees naked...</p>
+            </article>
 
-        <article class="article-card">
-            <div class="article-meta">
-                <span class="article-tag">Poetry</span>
-                <span class="article-date">September 18, 2023</span>
-            </div>
-            <h2 class="article-title"><a href="posts/whispers-in-refrain.html">Whispers in Refrain</a></h2>
-            <p class="article-excerpt">Whispers linger as sparks ignite allure takes flight in a hushed night. Flames kindled as uncertainty lies...</p>
-        </article>
+            <article class="article-card">
+                <div class="article-meta">
+                    <span class="article-date">September 30, 2023</span>
+                </div>
+                <h3 class="article-title"><a href="posts/haunting-melody.html">A Haunting Melody</a></h3>
+                <p class="article-excerpt">Adorned by waning lunar sight droplets dance, weaving light stirring ceaseless eerie charm...</p>
+            </article>
 
-        <article class="article-card">
-            <div class="article-meta">
-                <span class="article-tag">Poetry</span>
-                <span class="article-date">July 25, 2022</span>
-            </div>
-            <h2 class="article-title"><a href="posts/spectre.html">Spectre</a></h2>
-            <p class="article-excerpt">When I feel breath as labour quenching the angst in drops spectre creeps in as always...</p>
-        </article>
+            <article class="article-card">
+                <div class="article-meta">
+                    <span class="article-date">September 18, 2023</span>
+                </div>
+                <h3 class="article-title"><a href="posts/whispers-in-refrain.html">Whispers in Refrain</a></h3>
+                <p class="article-excerpt">Whispers linger as sparks ignite allure takes flight in a hushed night. Flames kindled as uncertainty lies...</p>
+            </article>
 
-        <article class="article-card">
-            <div class="article-meta">
-                <span class="article-tag">Poetry</span>
-                <span class="article-date">October 08, 2021</span>
-            </div>
-            <h2 class="article-title"><a href="posts/smiling-radcliffe.html">Smiling Radcliffe</a></h2>
-            <p class="article-excerpt">Sucking the last drop of nectar negating its taste, colour or smell with a slap and kick...</p>
-        </article>
+            <article class="article-card">
+                <div class="article-meta">
+                    <span class="article-date">July 25, 2022</span>
+                </div>
+                <h3 class="article-title"><a href="posts/spectre.html">Spectre</a></h3>
+                <p class="article-excerpt">When I feel breath as labour quenching the angst in drops spectre creeps in as always...</p>
+            </article>
+
+            <article class="article-card">
+                <div class="article-meta">
+                    <span class="article-date">October 08, 2021</span>
+                </div>
+                <h3 class="article-title"><a href="posts/smiling-radcliffe.html">Smiling Radcliffe</a></h3>
+                <p class="article-excerpt">Sucking the last drop of nectar negating its taste, colour or smell with a slap and kick...</p>
+            </article>
+        </section>
+
+        <section id="non-fiction" class="category-section">
+            <h2 class="section-header">Non-Fiction</h2>
+            <p class="empty-state">No entries yet. Check back soon.</p>
+        </section>
+
+        <section id="playlists" class="category-section">
+            <h2 class="section-header">Playlists</h2>
+            <p class="empty-state">No entries yet. Check back soon.</p>
+        </section>
         
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 Jorlin Jose &middot; <a href="[https://jorlin.in](https://jorlin.in)">jorlin.in</a></p>
+            <p>&copy; 2026 Jorlin &middot; <a href="https://jorlin.in">jorlin.in</a></p>
         </div>
     </footer>
 
