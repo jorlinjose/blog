@@ -1,361 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shatterOcalm | Jorlin's Blog</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shatterOcalm | Jorlin's Blog</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        /* --- CSS VARIABLES (Colorful Literary Theme) --- */
-        :root {
-            --bg-color: #f7f5f0; 
-            --surface-color: #ffffff; 
-            --heading-color: #1a365d; 
-            --subheading-color: #2d3748; 
-            --text-main: #4a5568; 
-            --text-muted: #718096;
-            --accent-color: #9b2c2c; 
-            --accent-light: #fff5f5; 
-            --border-color: #e2e8f0;
-            --spotify-green: #1DB954;
-            
-            --font-serif: 'Playfair Display', Georgia, serif;
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        }
+    <style>
+        /* --- CSS VARIABLES (Colorful Literary Theme) --- */
+        :root {
+            --bg-color: #f7f5f0; 
+            --surface-color: #ffffff; 
+            --heading-color: #1a365d; 
+            --subheading-color: #2d3748; 
+            --text-main: #4a5568; 
+            --text-muted: #718096;
+            --accent-color: #9b2c2c; 
+            --accent-light: #fff5f5; 
+            --border-color: #e2e8f0;
+            --spotify-green: #1DB954;
+            
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
 
-        /* --- GLOBAL RESETS --- */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        html { scroll-behavior: smooth; }
-        
-        body { 
-            background-color: var(--bg-color) !important; 
-            color: var(--text-main) !important; 
-            font-family: var(--font-sans) !important; 
-            line-height: 1.7; 
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
+        /* --- GLOBAL RESETS --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            background-color: var(--bg-color) !important; 
+            color: var(--text-main) !important; 
+            font-family: var(--font-sans) !important; 
+            line-height: 1.7; 
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
 
-        .container { max-width: 850px; margin: 0 auto; padding: 0 24px; }
+        .container { max-width: 850px; margin: 0 auto; padding: 0 24px; }
 
-        /* --- HEADER & NAVIGATION --- */
-        .site-header {
-            padding: 25px 0 20px; 
-            text-align: center;
-            border-bottom: 2px dashed var(--border-color);
-            margin-bottom: 30px; 
-        }
-        
-        .main-site-link {
-            display: inline-block;
-            font-size: 0.9rem;
-            color: var(--accent-color);
-            margin-bottom: 15px;
-            font-weight: 600;
-            background: var(--accent-light);
-            padding: 5px 15px;
-            border-radius: 20px;
-        }
-        
-        .main-site-link:hover { background: var(--accent-color); color: white; }
-        
-        .site-title {
-            font-family: var(--font-serif) !important;
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 5px;
-            color: var(--heading-color) !important;
-        }
-        
-        /* Navigation Menu */
-        .category-nav {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-        }
-        
-        .category-nav a {
-            font-family: var(--font-sans) !important;
-            font-size: 1rem; 
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            color: var(--text-muted);
-            padding-bottom: 4px;
-            border-bottom: 2px solid transparent;
-        }
-        
-        .category-nav a:hover {
-            color: var(--heading-color);
-            border-bottom: 2px solid var(--accent-color);
-        }
+        /* --- HEADER & NAVIGATION --- */
+        .site-header {
+            padding: 25px 0 20px; /* Reduced top/bottom padding significantly */
+            text-align: center;
+            border-bottom: 2px dashed var(--border-color);
+            margin-bottom: 30px; /* Reduced spacing below header */
+        }
+        
+        .main-site-link {
+            display: inline-block;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+            background: var(--accent-light);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        
+        .main-site-link:hover { background: var(--accent-color); color: white; }
+        
+        .site-title {
+            font-family: var(--font-serif) !important;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+            color: var(--heading-color) !important;
+        }
+        
+        /* Navigation Menu */
+        .category-nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .category-nav a {
+            font-family: var(--font-sans) !important;
+            font-size: 1rem; /* Slightly larger since it's no longer all-caps */
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .category-nav a:hover {
+            color: var(--heading-color);
+            border-bottom: 2px solid var(--accent-color);
+        }
 
-        /* --- CATEGORY SECTIONS --- */
-        .category-section {
-            margin-bottom: 60px;
-            padding-top: 20px;
-        }
+        /* --- CATEGORY SECTIONS --- */
+        .category-section {
+            margin-bottom: 60px;
+            padding-top: 20px;
+        }
 
-        .section-header {
-            font-family: var(--font-serif);
-            font-size: 2.2rem;
-            color: var(--heading-color);
-            border-bottom: 3px solid var(--accent-color);
-            padding-bottom: 8px;
-            margin-bottom: 30px;
-            display: inline-block;
-        }
+        .section-header {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--heading-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 8px;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
 
-        .empty-state {
-            color: var(--text-muted);
-            font-style: italic;
-            font-family: var(--font-serif);
-            background: var(--surface-color);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px dashed var(--border-color);
-        }
+        .empty-state {
+            color: var(--text-muted);
+            font-style: italic;
+            font-family: var(--font-serif);
+            background: var(--surface-color);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px dashed var(--border-color);
+        }
 
-        /* --- ARTICLE FEED (CARD UI) --- */
-        .article-card {
-            background: var(--surface-color);
-            padding: 35px;
-            margin-bottom: 25px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .article-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border-color: #cbd5e1;
-        }
+        /* --- ARTICLE FEED (CARD UI) --- */
+        .article-card {
+            background: var(--surface-color);
+            padding: 35px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: #cbd5e1;
+        }
 
-        .article-meta {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        
-        .article-date { color: var(--text-muted); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .article-date { color: var(--text-muted); }
 
-        .article-title {
-            font-family: var(--font-serif) !important;
-            font-size: 1.9rem;
-            line-height: 1.3;
-            color: var(--subheading-color) !important;
-        }
-        
-        .article-title a:hover { color: var(--accent-color); }
+        .article-title {
+            font-family: var(--font-serif) !important;
+            font-size: 1.9rem;
+            line-height: 1.3;
+            color: var(--subheading-color) !important;
+        }
+        
+        .article-title a:hover { color: var(--accent-color); }
 
-        .article-excerpt {
-            color: var(--text-main);
-            font-size: 1.05rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
+        .article-excerpt {
+            color: var(--text-main);
+            font-size: 1.05rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
 
-        /* --- PLAYLIST GRID UI --- */
-        .playlist-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px;
-        }
+        /* --- PLAYLIST GRID UI --- */
+        .playlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
 
-        .playlist-card {
-            background: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-weight: 600;
-            color: var(--subheading-color);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
+        .playlist-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 600;
+            color: var(--subheading-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
 
-        .playlist-card i {
-            font-size: 1.8rem;
-            color: var(--spotify-green);
-        }
+        .playlist-card i {
+            font-size: 1.8rem;
+            color: var(--spotify-green);
+        }
 
-        .playlist-card:hover {
-            border-color: var(--spotify-green);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(29, 185, 84, 0.1);
-            color: var(--spotify-green);
-        }
+        .playlist-card:hover {
+            border-color: var(--spotify-green);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(29, 185, 84, 0.1);
+            color: var(--spotify-green);
+        }
 
-        /* --- FOOTER --- */
-        .site-footer {
-            text-align: center;
-            padding: 60px 0 40px;
-            margin-top: 60px;
-            border-top: 2px dashed var(--border-color);
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-        
-        .site-footer a { font-weight: 600; color: var(--heading-color); }
-        .site-footer a:hover { color: var(--accent-color); }
+        /* --- FOOTER --- */
+        .site-footer {
+            text-align: center;
+            padding: 60px 0 40px;
+            margin-top: 60px;
+            border-top: 2px dashed var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .site-footer a { font-weight: 600; color: var(--heading-color); }
+        .site-footer a:hover { color: var(--accent-color); }
 
-        /* --- MOBILE TWEAKS --- */
-        @media (max-width: 600px) {
-            .site-title { font-size: 2.5rem; }
-            .category-nav { gap: 15px; }
-            .article-title { font-size: 1.6rem; }
-            .section-header { font-size: 1.8rem; }
-            .article-card { padding: 25px; }
-            .site-header { padding: 20px 0 15px; }
-        }
-    </style>
+        /* --- MOBILE TWEAKS --- */
+        @media (max-width: 600px) {
+            .site-title { font-size: 2.5rem; }
+            .category-nav { gap: 15px; }
+            .article-title { font-size: 1.6rem; }
+            .section-header { font-size: 1.8rem; }
+            .article-card { padding: 25px; }
+            .site-header { padding: 20px 0 15px; }
+        }
+    </style>
 </head>
 <body>
 
-    <header class="site-header">
-        <div class="container">
-            <a href="https://jorlin.in" class="main-site-link"><i class="fas fa-arrow-left" style="margin-right: 5px;"></i> Home</a>
-            <h1 class="site-title">shatterOcalm</h1>
-                        
-            <nav class="category-nav">
-                <a href="#poetry">Poetry</a>
-                <a href="#fiction">Fiction</a>
-                <a href="#non-fiction">Non-Fiction</a>
-                <a href="#playlists">Playlists</a>
-            </nav>
-        </div>
-    </header>
+    <header class="site-header">
+        <div class="container">
+            <a href="https://jorlin.in" class="main-site-link"><i class="fas fa-arrow-left" style="margin-right: 5px;"></i> Home</a>
+            <h1 class="site-title">shatterOcalm</h1>
+                        
+            <nav class="category-nav">
+                <a href="#poetry">Poetry</a>
+                <a href="#fiction">Fiction</a>
+                <a href="#non-fiction">Non-Fiction</a>
+                <a href="#playlists">Playlists</a>
+            </nav>
+        </div>
+    </header>
 
-    <main class="container">
-        
-        <section id="fiction" class="category-section">
-            <h2 class="section-header">Fiction</h2>
-            
-            <article class="article-card">
-                <div class="article-meta">
-                    <span class="article-date"><i class="far fa-calendar-alt"></i> March 14, 2026</span>
-                </div>
-                <h3 class="article-title"><a href="posts/parallax-protocol.html">The Parallax Protocol</a></h3>
-                <p class="article-excerpt">The light of the Aethelgard System was not yellow, nor was it the warm, nurturing orange of the primitive hearths described in the Old Archives. It was white—a clinical, bleaching white that scrubbed the shadows from every corner of the habitat ring...</p>
-            </article>
-        </section>
+    <main class="container">
+        
+        <section id="fiction" class="category-section">
+            <h2 class="section-header">Fiction</h2>
+            
+            <article class="article-card">
+                <div class="article-meta">
+                    <span class="article-date"><i class="far fa-calendar-alt"></i> March 14, 2026</span>
+                </div>
+                <h3 class="article-title"><a href="posts/parallax-protocol.html">The Parallax Protocol</a></h3>
+                <p class="article-excerpt">The light of the Aethelgard System was not yellow, nor was it the warm, nurturing orange of the primitive hearths described in the Old Archives. It was white—a clinical, bleaching white that scrubbed the shadows from every corner of the habitat ring...</p>
+            </article>
+        </section>
 
-        <section id="poetry" class="category-section">
-            <h2 class="section-header">Poetry</h2>
+        <section id="poetry" class="category-section">
+            <h2 class="section-header">Poetry</h2>
 
-            <article class="article-card">
-                <div class="article-meta">
-                    <span class="article-date"><i class="far fa-calendar-alt"></i> October 13, 2023</span>
-                </div>
-                <h3 class="article-title"><a href="posts/untimely-winter.html">Untimely Winter</a></h3>
-                <p class="article-excerpt">Ominous shroud descends as snow and dust embrace the wind howls, making the trees naked...</p>
-            </article>
+            <article class="article-card">
+                <div class="article-meta">
+                    <span class="article-date"><i class="far fa-calendar-alt"></i> October 13, 2023</span>
+                </div>
+                <h3 class="article-title"><a href="posts/untimely-winter.html">Untimely Winter</a></h3>
+                <p class="article-excerpt">Ominous shroud descends as snow and dust embrace the wind howls, making the trees naked...</p>
+            </article>
 
-            <article class="article-card">
-                <div class="article-meta">
-                    <span class="article-date"><i class="far fa-calendar-alt"></i> September 30, 2023</span>
-                </div>
-                <h3 class="article-title"><a href="posts/haunting-melody.html">A Haunting Melody</a></h3>
-                <p class="article-excerpt">Adorned by waning lunar sight droplets dance, weaving light stirring ceaseless eerie charm...</p>
-            </article>
+            <article class="article-card">
+                <div class="article-meta">
+                    <span class="article-date"><i class="far fa-calendar-alt"></i> September 30, 2023</span>
+                </div>
+                <h3 class="article-title"><a href="posts/haunting-melody.html">A Haunting Melody</a></h3>
+                <p class="article-excerpt">Adorned by waning lunar sight droplets dance, weaving light stirring ceaseless eerie charm...</p>
+            </article>
 
-            <article class="article-card">
-                <div class="article-meta">
-                    <span class="article-date"><i class="far fa-calendar-alt"></i> September 18, 2023</span>
-                </div>
-                <h3 class="article-title"><a href="posts/whispers-in-refrain.html">Whispers in Refrain</a></h3>
-                <p class="article-excerpt">Whispers linger as sparks ignite allure takes flight in a hushed night. Flames kindled as uncertainty lies...</p>
-            </article>
+            <article class="article-card">
+                <div class="article-meta">
+                    <span class="article-date"><i class="far fa-calendar-alt"></i> September 18, 2023</span>
+                </div>
+                <h3 class="article-title"><a href="posts/whispers-in-refrain.html">Whispers in Refrain</a></h3>
+                <p class="article-excerpt">Whispers linger as sparks ignite allure takes flight in a hushed night. Flames kindled as uncertainty lies...</p>
+            </article>
 
-            <article class="article-card">
-                <div class="article-meta">
-                    <span class="article-date"><i class="far fa-calendar-alt"></i> July 25, 2022</span>
-                </div>
-                <h3 class="article-title"><a href="posts/spectre.html">Spectre</a></h3>
-                <p class="article-excerpt">When I feel breath as labour quenching the angst in drops spectre creeps in as always...</p>
-            </article>
+            <article class="article-card">
+                <div class="article-meta">
+                    <span class="article-date"><i class="far fa-calendar-alt"></i> July 25, 2022</span>
+                </div>
+                <h3 class="article-title"><a href="posts/spectre.html">Spectre</a></h3>
+                <p class="article-excerpt">When I feel breath as labour quenching the angst in drops spectre creeps in as always...</p>
+            </article>
 
-            <article class="article-card">
-                <div class="article-meta">
-                    <span class="article-date"><i class="far fa-calendar-alt"></i> October 08, 2021</span>
-                </div>
-                <h3 class="article-title"><a href="posts/smiling-radcliffe.html">Smiling Radcliffe</a></h3>
-                <p class="article-excerpt">Sucking the last drop of nectar negating its taste, colour or smell with a slap and kick...</p>
-            </article>
-        </section>
+            <article class="article-card">
+                <div class="article-meta">
+                    <span class="article-date"><i class="far fa-calendar-alt"></i> October 08, 2021</span>
+                </div>
+                <h3 class="article-title"><a href="posts/smiling-radcliffe.html">Smiling Radcliffe</a></h3>
+                <p class="article-excerpt">Sucking the last drop of nectar negating its taste, colour or smell with a slap and kick...</p>
+            </article>
+        </section>
 
-        <section id="non-fiction" class="category-section">
-            <h2 class="section-header">Non-Fiction</h2>
-            
-            <article class="article-card">
-                <div class="article-meta">
-                    <span class="article-date"><i class="far fa-calendar-alt"></i> March 17, 2026</span>
-                </div>
-                <h3 class="article-title">
-                    <a href="YOUR_GDRIVE_LINK_HERE" target="_blank">QGIS Tutorial <i class="fas fa-external-link-alt" style="font-size: 0.6em; margin-left: 5px; vertical-align: middle; color: var(--text-muted);"></i></a>
-                </h3>
-                <p class="article-excerpt">[Insert your description here]</p>
-            </article>
-        </section>
+        <section id="non-fiction" class="category-section">
+            <h2 class="section-header">Non-Fiction</h2>
+            <p href="https://drive.google.com/drive/folders/1dWa5BQUBPcsTGSNoXAS51poQGlncdahU?usp=drive_link">QGis Tutorial</a></p>
+        </section>
 
-        <section id="playlists" class="category-section">
-            <h2 class="section-header">Playlists</h2>
-            
-            <div class="playlist-grid">
-                <a href="https://open.spotify.com/playlist/6Uxbjp9iag9SwZeGgRMF6O?si=nEcNi899SiqDHU-7Sia0JA&pi=dhKbeL4eTNK3J" target="_blank" class="playlist-card">
-                    <i class="fab fa-spotify"></i>
-                    <span>Lag Ja Gale</span>
-                </a>
-                <a href="https://open.spotify.com/playlist/37i9dQZF1EQn4jwNIohw50?si=utovy78SRwWMxLJChfrjDA" target="_blank" class="playlist-card">
-                    <i class="fab fa-spotify"></i>
-                    <span>2000s Mix</span>
-                </a>
-                <a href="https://open.spotify.com/playlist/0ziglu9hYHm9y7Nknh3e4c?si=7k593pK0Raa5vmqV_66tGA" target="_blank" class="playlist-card">
-                    <i class="fab fa-spotify"></i>
-                    <span>Tharattu</span>
-                </a>
-                <a href="https://open.spotify.com/playlist/25fCBrTDFKvnxTlafW2TOk?si=Phbfbu6KSJGj3rI_TrEE3Q" target="_blank" class="playlist-card">
-                    <i class="fab fa-spotify"></i>
-                    <span>Evergreen Malayalam</span>
-                </a>
-                <a href="https://open.spotify.com/playlist/39iCP5PvxaVE1N5W33HOEc?si=ZCdTbsYDSB69vK--eW_8ag" target="_blank" class="playlist-card">
-                    <i class="fab fa-spotify"></i>
-                    <span>tamilazhagu</span>
-                </a>
-                <a href="https://open.spotify.com/playlist/0DdlGYcQl0i5NSzU5T6vuN?si=9yYC3ItxS4yTM58hc27K0w" target="_blank" class="playlist-card">
-                    <i class="fab fa-spotify"></i>
-                    <span>mystery</span>
-                </a>
-            </div>
+        <section id="playlists" class="category-section">
+            <h2 class="section-header">Playlists</h2>
+            
+            <div class="playlist-grid">
+                <a href="https://open.spotify.com/playlist/6Uxbjp9iag9SwZeGgRMF6O?si=nEcNi899SiqDHU-7Sia0JA&pi=dhKbeL4eTNK3J" target="_blank" class="playlist-card">
+                    <i class="fab fa-spotify"></i>
+                    <span>Lag Ja Gale</span>
+                </a>
+                <a href="https://open.spotify.com/playlist/37i9dQZF1EQn4jwNIohw50?si=utovy78SRwWMxLJChfrjDA" target="_blank" class="playlist-card">
+                    <i class="fab fa-spotify"></i>
+                    <span>2000s Mix</span>
+                </a>
+                <a href="https://open.spotify.com/playlist/0ziglu9hYHm9y7Nknh3e4c?si=7k593pK0Raa5vmqV_66tGA" target="_blank" class="playlist-card">
+                    <i class="fab fa-spotify"></i>
+                    <span>tharattu</span>
+                </a>
+                <a href="https://open.spotify.com/playlist/25fCBrTDFKvnxTlafW2TOk?si=Phbfbu6KSJGj3rI_TrEE3Q" target="_blank" class="playlist-card">
+                    <i class="fab fa-spotify"></i>
+                    <span>Evergreen Malayalam</span>
+                </a>
+                <a href="https://open.spotify.com/playlist/39iCP5PvxaVE1N5W33HOEc?si=ZCdTbsYDSB69vK--eW_8ag" target="_blank" class="playlist-card">
+                    <i class="fab fa-spotify"></i>
+                    <span>tamilazhagu</span>
+                </a>
+                <a href="https://open.spotify.com/playlist/0DdlGYcQl0i5NSzU5T6vuN?si=9yYC3ItxS4yTM58hc27K0w" target="_blank" class="playlist-card">
+                    <i class="fab fa-spotify"></i>
+                    <span>mystery</span>
+                </a>
+            </div>
 
-        </section>
-        
-    </main>
+        </section>
+        
+    </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>© <a href="https://jorlin.in">2026 Jorlin</a></p>
-        </div>
-    </footer>
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <a href="https://jorlin.in">2026 Jorlin</a></p>
+        </div>
+    </footer>
 
 </body>
 </html>
