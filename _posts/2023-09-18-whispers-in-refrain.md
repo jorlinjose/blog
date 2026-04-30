@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Whispers in Refrain"
+title: "whispers in refrain"
 date: 2023-08-18
 category: poetry
 excerpt: "whispers linger as sparks ignite..."
