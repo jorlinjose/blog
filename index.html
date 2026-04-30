@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Poetry, fiction, and curated playlists by Jorlin.">
     <title>shatterOcalm | Jorlin's Blog</title>
     
+    <link rel="icon" href="https://jorlin.in/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -41,7 +43,8 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
+        /* Base link styling */
+        a { text-decoration: none; color: inherit; transition: all 0.2s ease; display: inline-block; }
 
         .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
 
@@ -54,7 +57,6 @@
         }
         
         .main-site-link {
-            display: inline-block;
             font-size: 0.85rem;
             color: var(--accent-color);
             margin-bottom: 10px;
@@ -101,7 +103,7 @@
 
         /* --- CATEGORY SECTIONS --- */
         .category-section {
-            margin-bottom: 40px;
+            margin-bottom: 30px; /* Reduced for tighter layout */
             padding-top: 15px;
         }
 
@@ -126,11 +128,11 @@
             font-size: 0.95rem;
         }
 
-        /* --- ARTICLE FEED (COMPACT CARD UI) --- */
+        /* --- ARTICLE FEED (CLICKABLE CARD UI) --- */
         .article-card {
             background: var(--surface-color);
-            padding: 20px 25px; /* Reduced padding */
-            margin-bottom: 15px; /* Tighter spacing between cards */
+            padding: 20px 25px; 
+            margin-bottom: 15px; 
             border-radius: 10px;
             border: 1px solid var(--border-color);
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
@@ -138,6 +140,7 @@
             flex-direction: column;
             gap: 8px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            width: 100%; /* Ensures anchor takes full block width */
         }
         
         .article-card:hover {
@@ -158,18 +161,20 @@
 
         .article-title {
             font-family: var(--font-serif) !important;
-            font-size: 1.5rem; /* Slightly smaller for compactness */
+            font-size: 1.5rem; 
             line-height: 1.2;
             color: var(--subheading-color) !important;
+            transition: color 0.2s ease;
         }
         
-        .article-title a:hover { color: var(--accent-color); }
+        /* Change title color when entire card is hovered */
+        .article-card:hover .article-title { color: var(--accent-color) !important; }
 
         .article-excerpt {
             color: var(--text-main);
             font-size: 0.95rem;
             display: -webkit-box;
-            -webkit-line-clamp: 2; /* Keeps excerpts to exactly 2 lines */
+            -webkit-line-clamp: 2; 
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
@@ -178,7 +183,7 @@
         .playlist-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px; /* Tighter grid */
+            gap: 15px; 
         }
 
         .playlist-card {
@@ -193,6 +198,7 @@
             font-size: 0.95rem;
             color: var(--subheading-color);
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            width: 100%;
         }
 
         .playlist-card i {
@@ -239,8 +245,8 @@
             <h1 class="site-title">shatterOcalm</h1>
                         
             <nav class="category-nav">
-                <a href="#poetry">Poetry</a>
                 <a href="#fiction">Fiction</a>
+                <a href="#poetry">Poetry</a>
                 <a href="#non-fiction">Non-Fiction</a>
                 <a href="#playlists">Playlists</a>
             </nav>
@@ -252,57 +258,57 @@
         <section id="fiction" class="category-section">
             <h2 class="section-header">Fiction</h2>
             
-            <article class="article-card">
+            <a href="posts/parallax-protocol.html" class="article-card">
                 <div class="article-meta">
                     <span class="article-date"><i class="far fa-calendar-alt"></i> March 14, 2026</span>
                 </div>
-                <h3 class="article-title"><a href="posts/parallax-protocol.html">The Parallax Protocol</a></h3>
+                <h3 class="article-title">The Parallax Protocol</h3>
                 <p class="article-excerpt">The light of the Aethelgard System was not yellow, nor was it the warm, nurturing orange of the primitive hearths described in the Old Archives. It was white—a clinical, bleaching white that scrubbed the shadows from every corner of the habitat ring...</p>
-            </article>
+            </a>
         </section>
 
         <section id="poetry" class="category-section">
             <h2 class="section-header">Poetry</h2>
 
-            <article class="article-card">
+            <a href="posts/untimely-winter.html" class="article-card">
                 <div class="article-meta">
                     <span class="article-date"><i class="far fa-calendar-alt"></i> October 13, 2023</span>
                 </div>
-                <h3 class="article-title"><a href="posts/untimely-winter.html">Untimely Winter</a></h3>
+                <h3 class="article-title">Untimely Winter</h3>
                 <p class="article-excerpt">Ominous shroud descends as snow and dust embrace the wind howls, making the trees naked...</p>
-            </article>
+            </a>
 
-            <article class="article-card">
+            <a href="posts/haunting-melody.html" class="article-card">
                 <div class="article-meta">
                     <span class="article-date"><i class="far fa-calendar-alt"></i> September 30, 2023</span>
                 </div>
-                <h3 class="article-title"><a href="posts/haunting-melody.html">A Haunting Melody</a></h3>
+                <h3 class="article-title">A Haunting Melody</h3>
                 <p class="article-excerpt">Adorned by waning lunar sight droplets dance, weaving light stirring ceaseless eerie charm...</p>
-            </article>
+            </a>
 
-            <article class="article-card">
+            <a href="posts/whispers-in-refrain.html" class="article-card">
                 <div class="article-meta">
                     <span class="article-date"><i class="far fa-calendar-alt"></i> September 18, 2023</span>
                 </div>
-                <h3 class="article-title"><a href="posts/whispers-in-refrain.html">Whispers in Refrain</a></h3>
+                <h3 class="article-title">Whispers in Refrain</h3>
                 <p class="article-excerpt">Whispers linger as sparks ignite allure takes flight in a hushed night. Flames kindled as uncertainty lies...</p>
-            </article>
+            </a>
 
-            <article class="article-card">
+            <a href="posts/spectre.html" class="article-card">
                 <div class="article-meta">
                     <span class="article-date"><i class="far fa-calendar-alt"></i> July 25, 2022</span>
                 </div>
-                <h3 class="article-title"><a href="posts/spectre.html">Spectre</a></h3>
+                <h3 class="article-title">Spectre</h3>
                 <p class="article-excerpt">When I feel breath as labour quenching the angst in drops spectre creeps in as always...</p>
-            </article>
+            </a>
 
-            <article class="article-card">
+            <a href="posts/smiling-radcliffe.html" class="article-card">
                 <div class="article-meta">
                     <span class="article-date"><i class="far fa-calendar-alt"></i> October 08, 2021</span>
                 </div>
-                <h3 class="article-title"><a href="posts/smiling-radcliffe.html">Smiling Radcliffe</a></h3>
+                <h3 class="article-title">Smiling Radcliffe</h3>
                 <p class="article-excerpt">Sucking the last drop of nectar negating its taste, colour or smell with a slap and kick...</p>
-            </article>
+            </a>
         </section>
 
         <section id="non-fiction" class="category-section">
@@ -352,3 +358,4 @@
 
 </body>
 </html>
+
