@@ -1,0 +1,5 @@
+title: shatterOcalm
+description: A digital journal of reflections, code, and narrative.
+url: "https://blog.jorlin.in"
+markdown: kramdown
+permalink: /:categories/:title/
