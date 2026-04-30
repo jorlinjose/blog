@@ -218,5 +218,3 @@ Joren checked his vitals. Green across the board. He smiled, the vacant, beatifi
 “For the Shield,” he whispered.
 He turned back to his work, welding the bars of the cage a little tighter, ensuring that nothing from the outside could ever get in, and nothing from the inside—not even the truth—could ever get out.
 
-</div>
-
